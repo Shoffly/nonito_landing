@@ -1,0 +1,62 @@
+.dave{
+  width:80vw;
+}
+.container {
+  
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
+  padding: 30px;
+  grid-template-rows: 1fr 1fr 1fr 1;
+  gap: 0.5rem;
+  margin: auto;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "standout automate automate"
+    "standout journey journey"
+    "standout journey journey"
+    "standout journey journey"
+    "broadcast journey journey"
+  "broadcast journey journey"
+    "broadcast journey journey";
+}
+
+.automate {
+  grid-area: automate;
+  display: flex;
+  align-items: right;
+}
+
+.journey {
+  grid-area: journey;
+}
+
+.standout {
+  grid-area: standout;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.broadcast {
+  grid-area: broadcast;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .dave {
+    display: none;
+  }
+}
+
