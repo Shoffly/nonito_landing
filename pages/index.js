@@ -5,15 +5,19 @@ import Bento from "../components/bentobox";
 import Bentof from "../components/bentoflex";
 import Hero from "../components/herosection";
 import Footer from "../components/footer"
+import Nav from "../components/Nav"
+
+
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Growth Tool</title>
-        <meta name="description" content="|Grow your business" />
+        <title>Nonito</title>
+        <meta name="description" content="| the growth tool for modern marketing" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Nav></Nav>
       <Hero></Hero>
       <Bentof />
       <Bento></Bento>

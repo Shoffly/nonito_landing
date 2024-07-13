@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/herosection.module.css';
-import Image from 'next/image';
 
 export default function Hero() {
   useEffect(() => {
@@ -13,16 +12,17 @@ export default function Hero() {
   }, []);
 
   return (
-     <section className={styles.wrapper}>
-    <section className={styles.hero}>
-      <div className={styles.herocontent}>
-        <h1 className={styles.tagline}>Personalize your communication</h1>
-        <h1 className={styles.tagline}>Delight your customers</h1>
-        <h1 className={styles.tagline}>Increase your revenue</h1>
-       
+    <section className={styles.wrapper}>
+      <section className={styles.hero}>
+        <div className={styles.herocontent}>
+          <h1 className={styles.tagline}>
+            Campaigns with <span className={styles.superpowers}>Superpowers</span>
+          </h1>
+          <p className={styles.subtext}>
+            Nonito allows you to automate, personalize, and track SMS and notifications for every user.
+          </p>
           <button className={styles.button}>Get in Touch</button>
-        
-      </div>
+        </div>
       </section>
     </section>
   );

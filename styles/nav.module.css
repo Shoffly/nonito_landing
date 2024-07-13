@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  padding-right: 70%;
+  justify-content: flex-start;
+  background-color: black; /* Adjust if you have a specific background color */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.dot {
+  color: #4caf50;
+}
