@@ -30,9 +30,11 @@
 }
 
 .superpowers {
-  background: linear-gradient(90deg, #4caf50, #a5d6a7);
+  background: linear-gradient(90deg, #4caf50, #a5d6a7, #4caf50);
+  background-size: 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: gradientShift 50s ease-in-out infinite;
 }
 
 
@@ -67,6 +69,18 @@
 .fadeIn {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* End of Hero Section */
