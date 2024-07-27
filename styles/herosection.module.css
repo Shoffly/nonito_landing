@@ -40,10 +40,10 @@
 
 .subtext {
   font-size: 18px;
-  color: #666;
+  color: white;
   margin-bottom: 32px;
   opacity: 0;
-  text-align: left;
+  text-align: center;
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
 }

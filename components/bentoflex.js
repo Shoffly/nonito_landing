@@ -27,6 +27,7 @@ export default function Bentof() {
           height={255}
           className={styles.images}
         />
+        <br></br>
         <Jbento />
       </div>
     </div>
