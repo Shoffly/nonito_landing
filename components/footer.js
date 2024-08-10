@@ -6,7 +6,7 @@ export default function Footer() {
         <div className={styles.container}>
             <h1 class="tagline">Take your business to the next level</h1>
             <a
-                href="https://bpvau5yi76b.typeform.com/to/NAn2Y0dS"
+                href="/form"
                 class="button cta"
             >
                 Get Started

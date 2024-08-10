@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/herosection.module.css';
+import Link from 'next/link';
+
 
 export default function Hero() {
   useEffect(() => {
@@ -21,7 +23,9 @@ export default function Hero() {
           <p className={styles.subtext}>
             Nonito allows you to automate, personalize, and track SMS and notifications for every user.
           </p>
-          <button className={styles.button}>Get in Touch</button>
+         <Link href='/form'>
+          <button className={`${styles.button} ${styles.fadeIn}`}>Get in Touch</button>
+           </Link>
         </div>
       </section>
     </section>
