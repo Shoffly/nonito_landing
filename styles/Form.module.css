@@ -5,10 +5,6 @@
   padding: 20px;
   max-width: 500px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh; /* Center the form vertically */
 }
 
 .progressBar {
@@ -16,7 +12,6 @@
   height: 10px;
   background-color: #333;
   margin-bottom: 20px;
-  
 }
 
 .progress {
@@ -106,38 +101,6 @@
   flex-grow: 1;
 }
 
-.question {
-  color: white;
-}
-
-/* Keyframes for sliding animations */
-@keyframes slideIn {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-}
-
-/* Apply animation classes */
-.slideIn {
-  animation: slideIn 0.5s ease forwards;
-}
-
-.slideOut {
-  animation: slideOut 0.5s ease forwards;
+.question{
+  font: white;
 }
