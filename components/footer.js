@@ -9,7 +9,7 @@ export default function Footer() {
                 href="/form"
                 class="button cta"
             >
-                Get Started
+                Get Demo
             </Link>
 
             <footer>

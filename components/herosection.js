@@ -24,7 +24,7 @@ export default function Hero() {
             Nonito allows you to automate, personalize, and track SMS and notifications for every user.
           </p>
          <Link href='/form'>
-          <button className={`${styles.button} ${styles.fadeIn}`}>Get in Touch</button>
+          <button className={`${styles.button} ${styles.fadeIn}`}>Get Demo</button>
            </Link>
         </div>
       </section>

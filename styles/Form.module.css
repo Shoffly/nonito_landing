@@ -101,6 +101,28 @@
   flex-grow: 1;
 }
 
-.question{
-  font: white;
+.question {
+  color: white;
+}
+
+.formContent {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.formContent.fade-out {
+  opacity: 0;
+}
+
+.successMessage {
+  text-align: center;
+}
+
+.successMessage h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.successMessage p {
+  font-size: 18px;
 }

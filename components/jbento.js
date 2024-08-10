@@ -12,7 +12,7 @@ export default function Jbento() {
             <p className={styles.text1}>Build journeys</p>
             <p className={styles.text2}>Journeys allow you to create step by step campaigns to personalize communication with users.</p>
             <Link href='/form'>
-            <button className={styles.button}>Get in Touch</button>
+            <button className={styles.button}>Get Demo</button>
                 </Link>
         </div>
         <div className={styles.interactivity}>
