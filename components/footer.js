@@ -1,16 +1,16 @@
 import styles from "../styles/Footer.module.css";
-import Image from "next/image";
+import Link from 'next/link';
 
 export default function Footer() {
     return (
         <div className={styles.container}>
             <h1 class="tagline">Take your business to the next level</h1>
-            <a
+            <Link
                 href="/form"
                 class="button cta"
             >
                 Get Started
-            </a>
+            </Link>
 
             <footer>
                 <div>
