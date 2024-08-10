@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import styles from '../styles/Form.module.css';
+import Nav from "../components/Nav"
 
 // Initialize Supabase client
 const supabase = createClient('https://nztwxdxvqncqwjmirasr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56dHd4ZHh2cW5jcXdqbWlyYXNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTkzOTg1OTUsImV4cCI6MjAzNDk3NDU5NX0.y9WXeisP-eHEvRnKNymmDOP9mIeh82D-bTfGqNV9svw');
@@ -161,6 +162,8 @@ export default function Form() {
   };
 
   return (
+    <>
+    <Nav></Nav>
     <div className={styles.formContainer}>
       <div className={styles.progressBar}>
         <div className={styles.progress} style={{ width: `${(step / 5) * 100}%` }}></div>
@@ -174,5 +177,6 @@ export default function Form() {
         <button type="submit">{step < 5 ? 'OK' : 'Submit'}</button>
       </form>
     </div>
+      </>
   );
 }
