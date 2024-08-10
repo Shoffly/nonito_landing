@@ -59,7 +59,7 @@ export default function Form() {
       case 1:
         return (
           <>
-            <h2 className={styles.question} >Hello, what's your name?</h2>
+            <h2 className={styles.question} >Hello, what&#x2019;s your name?</h2>
             <input
               type="text"
               value={formData.name}
