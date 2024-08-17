@@ -31,21 +31,22 @@ const PricingPage = () => {
   ];
 
   const smsPricing = [
-    { count: 500, cost: 0.15 },
-    { count: 1000, cost: 0.14 },
-    { count: 2500, cost: 0.13 },
-    { count: 5000, cost: 0.12 },
-    { count: 10000, cost: 0.12 },
-    { count: 20000, cost: 0.12 }, // Adjusted this value to match the default
-    { count: 50000, cost: 0.11 },
-    { count: 100000, cost: 0.11 },
-    { count: 200000, cost: 0.11 },
-    { count: 500000, cost: 0.10 },
-    { count: 750000, cost: 0.10 },
-    { count: 1000000, cost: 0.10 },
-    { count: 2000000, cost: 0.09 },
-    { count: 3000000, cost: 0.09 },
-    { count: 4000000, cost: 0.09 },
+    { count: 500, cost: 0.50 },
+    { count: 1000, cost: 0.46 },
+    { count: 2500, cost: 0.44 },
+    { count: 5000, cost: 0.42 },
+    { count: 10000, cost: 0.27 },
+    { count: 15000, cost: 0.26 },
+    { count: 20000, cost: 0.26 },
+    { count: 50000, cost: 0.25 },
+    { count: 100000, cost: 0.24 },
+    { count: 200000, cost: 0.23 },
+    { count: 500000, cost: 0.23 },
+    { count: 750000, cost: 0.22 },
+    { count: 1000000, cost: 0.21 },
+    { count: 2000000, cost: 0.21 },
+    { count: 3000000, cost: 0.20 },
+    { count: 4000000, cost: 0.20 },
   ];
 
   const getSmsCost = (count) => {
