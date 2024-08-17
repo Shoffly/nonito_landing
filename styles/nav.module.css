@@ -20,3 +20,10 @@
 .pricing {
   color: white; /* Ensure the pricing link is visible */
 }
+
+
+.pricing:hover {
+  color: white; 
+  text-decoration: underline;
+  text-decoration-color: #4caf50;
+}
