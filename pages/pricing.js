@@ -16,6 +16,7 @@ const PricingPage = () => {
         'SMS Campaigns with Unique Tracking Links',
         'Retargeting Campaigns',
         'Analytics for Links, QR Codes, and SMS',
+        'Personalized sms campaigns',
       ],
     },
     {
@@ -24,7 +25,8 @@ const PricingPage = () => {
       features: [
         'All Mini features',
         'Integration with Customer Database',
-        'Personalized Automated Marketing',
+        'Cross-Channel Personalized Customer journeys',
+        'Dedicated marketing automation support team',
         'Push notification integration',
       ],
     },
