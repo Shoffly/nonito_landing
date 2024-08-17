@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '/styles/pricing.module.css';
 import Nav from "../components/Nav";
+import Link from 'next/link';
 
 const PricingPage = () => {
   const [smsCount, setSmsCount] = useState(20000); // Default value from your image
@@ -104,7 +105,9 @@ const PricingPage = () => {
                   ))}
                 </select>
               </div>
+              <Link href='/form'>
               <button className={styles.chooseButton}>Choose {tier.name}</button>
+                </Link>
             </div>
           ))}
         </div>
