@@ -10,6 +10,11 @@ export default function Nav() {
         Nonito<span className={styles.dot}>.</span>
       </div>
         </Link>
+      <Link href="/pricing">
+        <div className={styles.pricing}>
+          Pricing
+        </div>
+          </Link>
     </nav>
   );
 }

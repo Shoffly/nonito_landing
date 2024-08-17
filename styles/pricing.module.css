@@ -1,0 +1,130 @@
+.pricingPage {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 2rem;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+   display: flex;
+  color: #ffffff;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  
+}
+.description{
+  margin-top: -1%;
+  margin-bottom: 2.5%;
+}
+.pricingTiers {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.pricingCard {
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+.tierName {
+  font-size: 1.8rem;
+  margin-bottom: 0.2rem;
+  text-decoration: underline;
+  text-decoration-color: #4caf50;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+.subtext{
+  color: white;
+  font-size: 1.5rem;
+}
+
+.subtext2{
+  color: white;
+  
+}
+.featureList {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.featureItem {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.checkmark {
+  color: #4CAF50;
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.smsControl {
+  margin-bottom: 1.5rem;
+}
+
+.sliderLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.slider {
+  width: 100%;
+}
+
+.chooseButton {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.chooseButton:hover {
+  background-color: #45a049;
+}
+.numberInput {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+@media (min-width: 768px) {
+  .pricingTiers {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .pricingCard {
+    width: 45%;
+  }
+
+  .price {
+    font-size: 2rem;
+   
+  }
+}

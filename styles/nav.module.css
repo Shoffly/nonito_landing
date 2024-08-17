@@ -1,9 +1,9 @@
 .nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
-  padding-right: 70%;
-  justify-content: flex-start;
+  width: 90vw;
   background-color: black; /* Adjust if you have a specific background color */
 }
 
@@ -15,4 +15,8 @@
 
 .dot {
   color: #4caf50;
+}
+
+.pricing {
+  color: white; /* Ensure the pricing link is visible */
 }
