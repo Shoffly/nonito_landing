@@ -184,7 +184,7 @@ export default function Form() {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <Nav />
       <div className={styles.formContainer}>
         <div className={styles.progressBar}>
@@ -201,6 +201,6 @@ export default function Form() {
           )}
         </form>
       </div>
-    </>
+    </div>
   );
 }

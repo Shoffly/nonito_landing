@@ -69,7 +69,7 @@ const PricingPage = () => {
   const smsCostPerUnit = getSmsCost(smsCount);
 
   return (
-    <>
+    <div className={styles.container}>
       <Nav />
       <div className={styles.pricingPage}>
         <h1 className={styles.title}>Built to grow with your business. Flexible, transparent pricing.</h1>
@@ -112,7 +112,7 @@ const PricingPage = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

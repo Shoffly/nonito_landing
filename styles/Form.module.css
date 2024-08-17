@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .formContainer {
   font-family: 'Poppins', sans-serif;
   background-color: black;
