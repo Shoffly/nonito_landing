@@ -12,6 +12,7 @@ const PricingPage = () => {
       fixedCost: 1500,
       features: [
         'Unlimited Tracking Links',
+        'Redirect visitors to different destinations based on their device type (iOS, Android).',
         'Unlimited QR Codes',
         'SMS Campaigns with Unique Tracking Links',
         'Retargeting Campaigns',
