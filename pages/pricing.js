@@ -9,7 +9,7 @@ const PricingPage = () => {
   const tiers = [
     {
       name: 'Mini',
-      fixedCost: 1500,
+      fixedCost: 3000,
       features: [
         'Unlimited Tracking Links',
         'Redirect visitors to different destinations based on their device type (iOS, Android).',
@@ -22,7 +22,7 @@ const PricingPage = () => {
     },
     {
       name: 'Mega',
-      fixedCost: 5000,
+      fixedCost: 10000,
       features: [
         'All Mini features',
         'Integration with Customer Database',
