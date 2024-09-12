@@ -4,7 +4,9 @@
   align-items: center;
   flex-direction: column;
 }
-
+.smsDropdown{
+  width:80vw;
+}
 .pricingPage {
   width: 100vw;
   margin: 0 auto;
@@ -147,5 +149,8 @@
   .price {
     font-size: 2rem;
    
+  }
+  .smsDropdown{
+  width:80vw;
   }
 }
