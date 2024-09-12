@@ -98,7 +98,7 @@ const PricingPage = () => {
         
         <div className={styles.smsControl}>
           <label className={styles.sliderLabel}>
-            SMS Management:
+            Do you have an sms provider?
           </label>
           <select
             value={smsManagement}
@@ -162,7 +162,7 @@ const PricingPage = () => {
         </div>
         {smsManagement === 'existing' && (
           <p className={styles.disclaimer}>
-            * Nonito connects to your SMS provider and will charge you separately and in addition to your current SMS sending cost.
+            * Nonito connects to your SMS provider and will charge you separately per sms.
           </p>
         )}
       </div>
