@@ -94,11 +94,11 @@ const PricingPage = () => {
       <Nav />
       <div className={styles.pricingPage}>
         <h1 className={styles.title}>Built to grow with your business. Flexible, transparent pricing.</h1>
-        <p className={styles.description}>Whether you're just starting, scaling up, or on top of your game, Nonito has pricing plans to suit any business size.</p>
+        <p className={styles.description}>Whether you&apos;re just starting, scaling up, or on top of your game, Nonito has pricing plans to suit any business size.</p>
         
         <div className={styles.smsControl}>
           <label className={styles.sliderLabel}>
-            Do you have an sms providor?
+            SMS Management:
           </label>
           <select
             value={smsManagement}
