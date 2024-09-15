@@ -10,7 +10,7 @@ const PricingPage = () => {
   const tiers = [
     {
       name: 'Just Links',
-      fixedCost: 300,
+      fixedCost: 500,
       features: [
         'Unlimited Tracking Links',
         'Redirect visitors to different destinations based on their device type (iOS, Android).',
