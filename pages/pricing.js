@@ -13,11 +13,14 @@ const PricingPage = () => {
       fixedCost: 500,
       features: [
         'Unlimited Tracking Links',
-        'Redirect visitors to different destinations based on their device type (iOS, Android).',
         'Unlimited QR codes',
-        'Analytics for Links for 6 months',
+        'Redirect visitors to different destinations based on their device type (iOS, Android).',
+        'Analytics data for 6 months',
       ],
       noSms: true,
+      freeTrial: true,
+      buttonLink: 'https://mini.nonito.xyz/signup',
+      buttonText: 'Sign up now',
     },
     {
       name: 'Mini',
@@ -29,6 +32,9 @@ const PricingPage = () => {
         'Analytics for Links, QR Codes, and SMS',
         'Personalized sms campaigns',
       ],
+      freeTrial: true,
+      buttonLink: '/form',
+      buttonText: 'Contact us now',
     },
     {
       name: 'Mega',
@@ -40,6 +46,9 @@ const PricingPage = () => {
         'Dedicated marketing automation support team',
         'Push notification integration',
       ],
+      buttonLink: '/form-mega',
+      buttonText: 'Coming Soon',
+      disabled: true, // Add this line
     },
   ];
 
@@ -112,7 +121,7 @@ const PricingPage = () => {
 
         <div className={styles.smsControl}>
           <label className={styles.sliderLabel}>
-            How many SMS messages will you need?
+            How many SMS messages do you send per month?
           </label>
           <select
             value={smsCount}
@@ -130,33 +139,48 @@ const PricingPage = () => {
         <div className={styles.pricingTiers}>
           {tiers.map((tier) => (
             <div key={tier.name} className={styles.pricingCard}>
-              <h2 className={styles.tierName}>{tier.name}</h2>
-              <p className={styles.price}>
-                {tier.noSms ? (
-                  `${formatCurrency(tier.fixedCost)}/month`
+              <div className={styles.cardContent}>
+                <h2 className={styles.tierName}>{tier.name}</h2>
+                <div className={styles.pricingDetails}>
+                  <p className={styles.price}>
+                    {tier.noSms ? (
+                      `${formatCurrency(tier.fixedCost)}/month`
+                    ) : (
+                      <>
+                        <span className={styles.subtext}>from</span><br />
+                        {formatCurrency(calculateTotalCost(tier))}/month
+                      </>
+                    )}
+                  </p>
+                  {!tier.noSms && (
+                    <span className={styles.subtext2}>
+                      EGP {tier.fixedCost} + EGP {smsCostPerUnit.toFixed(2)} per SMS
+                      {smsManagement === 'existing' && '*'}
+                    </span>
+                  )}
+                  {tier.freeTrial && (
+                    <div className={styles.freeTrialBadge}>1 Month Free Trial</div>
+                  )}
+                </div>
+                <ul className={styles.featureList}>
+                  {tier.features.map((feature, index) => (
+                    <li key={index} className={styles.featureItem}>
+                      <span className={styles.checkmark}>✓</span> {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className={styles.buttonContainer}>
+                {tier.disabled ? (
+                  <button className={`${styles.chooseButton} ${styles.disabled}`} disabled>
+                    {tier.buttonText}
+                  </button>
                 ) : (
-                  <>
-                    <span className={styles.subtext}>from</span><br />
-                    {formatCurrency(calculateTotalCost(tier))}/month
-                  </>
+                  <Link href={tier.buttonLink}>
+                    <button className={styles.chooseButton}>{tier.buttonText}</button>
+                  </Link>
                 )}
-              </p>
-              {!tier.noSms && (
-                <span className={styles.subtext2}>
-                  EGP {tier.fixedCost} + EGP {smsCostPerUnit.toFixed(2)} per SMS
-                  {smsManagement === 'existing' && '*'}
-                </span>
-              )}
-              <ul className={styles.featureList}>
-                {tier.features.map((feature, index) => (
-                  <li key={index} className={styles.featureItem}>
-                    <span className={styles.checkmark}>✓</span> {feature}
-                  </li>
-                ))}
-              </ul>
-              <Link href='/form'>
-                <button className={styles.chooseButton}>Choose {tier.name}</button>
-              </Link>
+              </div>
             </div>
           ))}
         </div>
