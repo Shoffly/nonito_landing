@@ -1,34 +1,40 @@
-.dave{
-  width:80vw;
+.dave {
+  width: 100%;
+  max-width: 1200px; /* Adjust this value as needed */
+  margin: 0 auto;
+  padding: 0 20px; /* Add some padding on the sides */
 }
+
 .container {
-  
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr  ;
-  padding: 30px;
-  grid-template-rows: 1fr 1fr 1fr 1;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, auto);
   gap: 0.5rem;
   margin: auto;
   grid-auto-flow: row;
   grid-template-areas:
-    "standout automate automate"
-    "standout journey journey"
-    "standout journey journey"
-    "standout journey journey"
-    "broadcast journey journey"
-  "broadcast journey journey"
-    "broadcast journey journey";
+    "standout automate automate automate automate automate automate automate"
+    "standout journey journey journey journey journey journey journey"
+    "standout journey journey journey journey journey journey journey"
+    "standout journey journey journey journey journey journey journey"
+    "standout journey journey journey journey journey journey journey"
+    "broadcast journey journey journey journey journey journey journey"
+    "broadcast journey journey journey journey journey journey journey";
 }
 
 .automate {
   grid-area: automate;
   display: flex;
-  align-items: right;
+  justify-content: center;
+  align-items: center;
 }
 
 .journey {
   grid-area: journey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .standout {
@@ -55,8 +61,28 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "automate"
+      "standout"
+      "broadcast"
+      "journey";
+  }
+
   .dave {
-    display: none;
+    padding: 0 10px; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      "standout automate automate automate automate automate"
+      "standout journey journey journey journey journey"
+      "standout journey journey journey journey journey"
+      "broadcast journey journey journey journey journey";
   }
 }
 

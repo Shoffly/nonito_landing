@@ -14,7 +14,7 @@ const PricingPage = () => {
       features: [
         'Unlimited Tracking Links',
         'Unlimited QR codes',
-        'Redirect visitors to different destinations based on their device type (iOS, Android).',
+        'Target users based on device type (iOS, Android)',
         'Analytics data for 6 months',
       ],
       noSms: true,

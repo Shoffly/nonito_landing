@@ -26,7 +26,7 @@ export default function Hero() {
       <section className={styles.hero}>
         <div className={styles.herocontent}>
           <h1 className={styles.tagline}>
-            Campaigns with <span className={styles.superpowers}>Superpowers</span>
+            SMS with <span className={styles.superpowers}>Superpowers</span>
           </h1>
           <p className={styles.subtext}>
             Nonito allows you to automate, personalize, and track SMS and notifications for every user.
