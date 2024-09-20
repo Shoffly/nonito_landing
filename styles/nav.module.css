@@ -44,3 +44,44 @@
   text-decoration: underline;
   text-decoration-color: #4caf50;
 }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0; /* Reduced padding */
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .navButton {
+    padding: 5px 0; /* Further reduced padding */
+    margin: 2px 0; /* Smaller margin between items */
+    font-size: 0.9em; /* Slightly smaller font size */
+  }
+}
