@@ -17,10 +17,27 @@
   color: #4caf50;
 }
 
+.navLinks {
+  display: flex;
+  gap: 20px; /* Adds space between the buttons */
+}
+
+.navButton {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.navButton:hover {
+  background-color: rgba(69, 188, 73, 0.1); /* Light green background on hover */
+  text-decoration: none;
+}
+
 .pricing {
   color: white; /* Ensure the pricing link is visible */
 }
-
 
 .pricing:hover {
   color: white; 

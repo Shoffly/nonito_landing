@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import styles from '../styles/Form.module.css';
 import Nav from "../components/Nav"
+import { usePostHog } from 'posthog-js/react'  // Add this import
 
 // Initialize Supabase client
 const supabase = createClient('https://nztwxdxvqncqwjmirasr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56dHd4ZHh2cW5jcXdqbWlyYXNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTkzOTg1OTUsImV4cCI6MjAzNDk3NDU5NX0.y9WXeisP-eHEvRnKNymmDOP9mIeh82D-bTfGqNV9svw');
 
 export default function Form() {
+  const posthog = usePostHog()  // Add this line
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: '',
@@ -32,6 +34,58 @@ export default function Form() {
     }));
   };
 
+  const stepNames = {
+    1: "Name",
+    2: "Business Name",
+    3: "Selling Methods",
+    4: "SMS Provider",
+    5: "Phone Number",
+    6: "Thank You"
+  };
+
+  useEffect(() => {
+    // Track page view with initial step
+    posthog?.capture('form_page_view', { 
+      initial_step: step,
+      step_name: stepNames[step]
+    })
+  }, [posthog, step])
+
+  const nextStep = () => {
+    setIsFading(true);
+    setTimeout(() => {
+      const currentStep = step;
+      const newStep = currentStep + 1;
+      setStep(newStep);
+      setIsFading(false);
+      // Track step change with more details
+      posthog?.capture('form_step_changed', { 
+        from_step: currentStep, 
+        to_step: newStep,
+        from_step_name: stepNames[currentStep],
+        to_step_name: stepNames[newStep],
+        step_data: getStepData(currentStep)
+      })
+    }, 500);
+  };
+
+  const getStepData = (stepNumber) => {
+    switch(stepNumber) {
+      case 1:
+        return { name: formData.name };
+      case 2:
+        return { business_name: formData.businessName };
+      case 3:
+        return { selling_methods: formData.sellingMethods };
+      case 4:
+        return { sms_campaigns: formData.smsCampaigns };
+      case 5:
+        return { phone_number: formData.phoneNumber };
+      default:
+        return {};
+    }
+  };
+
   const handleSubmit = async () => {
     try {
       const { data, error } = await supabase
@@ -47,19 +101,23 @@ export default function Form() {
       if (error) throw error;
 
       console.log('Form submitted successfully:', data);
+      // Track form submission with all data
+      posthog?.capture('form_submitted', {
+        ...formData,
+        total_steps: step,
+        step_names: Object.values(stepNames).slice(0, step)
+      })
       nextStep(); // Move to the success page
     } catch (error) {
       console.error('Error submitting form:', error);
-      // Handle error (e.g., show error message)
+      // Track form submission error
+      posthog?.capture('form_submission_error', { 
+        error: error.message,
+        step: step,
+        step_name: stepNames[step],
+        form_data: formData
+      })
     }
-  };
-
-  const nextStep = () => {
-    setIsFading(true);
-    setTimeout(() => {
-      setStep(prev => prev + 1);
-      setIsFading(false);
-    }, 500); // This should match the transition duration in CSS
   };
 
   const renderStep = () => {

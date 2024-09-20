@@ -6,15 +6,18 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <Link href="/">
-      <div className={styles.logo}>
-        Nonito<span className={styles.dot}>.</span>
-      </div>
-        </Link>
-      <Link href="/pricing">
-        <div className={styles.pricing}>
-          Pricing
+        <div className={styles.logo}>
+          Nonito<span className={styles.dot}>.</span>
         </div>
-          </Link>
+      </Link>
+      <div className={styles.navLinks}>
+        <Link href="/pricing">
+          <div className={styles.navButton}>Pricing</div>
+        </Link>
+        <Link href="https://mini.nonito.xyz/signup">
+          <div className={styles.navButton}>Sign up</div>
+        </Link>
+      </div>
     </nav>
   );
 }

@@ -8,7 +8,6 @@
   width:80vw;
 }
 .pricingPage {
-  width: 100vw;
   margin: 0 auto;
   padding: 2rem;
   align-items: center;
@@ -80,18 +79,20 @@
   list-style-type: none;
   padding: 0;
   margin-bottom: 20px;
+  text-align: left; /* Add this line */
 }
 
 .featureItem {
   margin-bottom: 10px;
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Change from 'center' to 'flex-start' */
 }
 
 .checkmark {
   color: #4CAF50;
   margin-right: 0.5rem;
   font-weight: bold;
+  flex-shrink: 0; /* Add this line */
 }
 
 .smsControl {
@@ -165,6 +166,13 @@
 .subtext2 {
   display: block;
   margin-bottom: 5px;
+}
+
+.tierSummary {
+  max-width: 300px;
+  color: white;
+  margin: auto;
+  min-height: 3em;  /* Ensures consistent card heights */
 }
 
 @media (min-width: 768px) {

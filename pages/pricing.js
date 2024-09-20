@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '/styles/pricing.module.css';
 import Nav from "../components/Nav";
 import Link from 'next/link';
+import { usePostHog } from 'posthog-js/react'  // Add this import
 
 const PricingPage = () => {
+  const posthog = usePostHog()  // Add this line
   const [smsCount, setSmsCount] = useState(20000);
   const [smsManagement, setSmsManagement] = useState('nonito');
+
+  useEffect(() => {
+    // Track page view
+    posthog?.capture('pricing_page_view')
+  }, [posthog])
 
   const tiers = [
     {
@@ -17,6 +24,7 @@ const PricingPage = () => {
         'Target users based on device type (iOS, Android)',
         'Analytics data for 6 months',
       ],
+      summary: 'The complete solution for tracking and managing your links.',
       noSms: true,
       freeTrial: true,
       buttonLink: 'https://mini.nonito.xyz/signup',
@@ -27,11 +35,12 @@ const PricingPage = () => {
       fixedCost: 3000,
       features: [
         'All of links',
-        'SMS Campaigns with Unique Tracking Links',
-        'Retargeting Campaigns',
+        'SMS personalization',
+        'SMS campaign tracking',
+        'Retargeting SMS Campaigns',
         'Analytics for Links, QR Codes, and SMS',
-        'Personalized sms campaigns',
       ],
+      summary: 'For growing companies looking to perfect sms engagement.',
       freeTrial: true,
       buttonLink: '/form',
       buttonText: 'Contact us now',
@@ -46,9 +55,10 @@ const PricingPage = () => {
         'Dedicated marketing automation support team',
         'Push notification integration',
       ],
+      summary: 'Perfect for businesses with complex, multi-channel automation needs.',
       buttonLink: '/form-mega',
       buttonText: 'Coming Soon',
-      disabled: true, // Add this line
+      disabled: true,
     },
   ];
 
@@ -98,6 +108,10 @@ const PricingPage = () => {
 
   const smsCostPerUnit = getSmsCost(smsCount);
 
+  const handleTierClick = (tierName) => {
+    posthog?.capture('pricing_tier_clicked', { tier: tierName })
+  }
+
   return (
     <div className={styles.container}>
       <Nav />
@@ -138,13 +152,17 @@ const PricingPage = () => {
 
         <div className={styles.pricingTiers}>
           {tiers.map((tier) => (
-            <div key={tier.name} className={styles.pricingCard}>
+            <div key={tier.name} className={styles.pricingCard} onClick={() => handleTierClick(tier.name)}>
               <div className={styles.cardContent}>
                 <h2 className={styles.tierName}>{tier.name}</h2>
+                <p className={styles.tierSummary}>{tier.summary}</p>
                 <div className={styles.pricingDetails}>
                   <p className={styles.price}>
                     {tier.noSms ? (
-                      `${formatCurrency(tier.fixedCost)}/month`
+                      <>
+                       <span className={styles.subtext}>only</span><br />
+{formatCurrency(tier.fixedCost)}/month
+                      </>
                     ) : (
                       <>
                         <span className={styles.subtext}>from</span><br />
