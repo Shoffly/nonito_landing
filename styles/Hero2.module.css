@@ -1,6 +1,6 @@
 .heroWrapper {
     padding: 80px 20px;
-    min-height: 80vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,11 +21,19 @@
   
   .heroTitle {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
     text-align: center;
+  }
+  .heroTitlehighlight {
+    font-size: 3.5rem;
+    margin-top: -10%;
+    margin-bottom: .1rem;
+    text-align: center;
+
+
   }
   
   .highlight {
+
     color: #4caf50;
     display: inline-block;
   }

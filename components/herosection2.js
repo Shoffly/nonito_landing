@@ -9,7 +9,9 @@ const HeroSection = () => {
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
           <h1 className={styles.heroTitle}>
-            Sell more with{' '}
+            Sell more with
+          </h1>
+          <h1 className={styles.heroTitlehighlight}>
             <TypeAnimation
               sequence={[
                 'SMS',
