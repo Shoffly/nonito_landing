@@ -57,11 +57,7 @@
 @media (max-width: 768px) {
   .container {
     
-    width: 80vw;
-    height: 99vh;
-    padding: 10px;
-    align-items: left;
-    flex-direction: column;
+    display: none;
   }
   .interactivity {
     width: 75vw;
@@ -85,4 +81,5 @@
   .button {
     display: none;
   }
+  
 }

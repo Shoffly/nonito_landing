@@ -8,9 +8,16 @@ import Hero from "../components/herosection";
 import Footer from "../components/footer"
 import Nav from "../components/Nav"
 import { usePostHog } from 'posthog-js/react'  // Add this import
+import HeroSection from '../components/herosection2';
+import FeatureHighlight from '../components/highlightgrid';
+
+
+
 
 export default function Home() {
   const posthog = usePostHog()  // Add this line
+
+ 
 
   useEffect(() => {
     // Track page view
@@ -29,10 +36,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav onClick={() => trackComponentView('Nav')}></Nav>
-      <Hero onClick={() => trackComponentView('Hero')}></Hero>
-      <Bentof onClick={() => trackComponentView('Bentof')} />
-      <Bento onClick={() => trackComponentView('Bento')}></Bento>
+      <HeroSection onClick={() => trackComponentView('Hero')}></HeroSection>
+      <FeatureHighlight onClick={() => trackComponentView('FeatureHighlight')} />
+      
+      
+      
+      
+     
       <Footer onClick={() => trackComponentView('Footer')}></Footer>
+      
     </div>
   );
 }
+
