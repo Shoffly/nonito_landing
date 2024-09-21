@@ -88,6 +88,7 @@ export default function Form() {
 
   const handleSubmit = async () => {
     try {
+      // First, submit to Supabase
       const { data, error } = await supabase
         .from('form_responses')
         .insert([{
@@ -100,13 +101,30 @@ export default function Form() {
 
       if (error) throw error;
 
-      console.log('Form submitted successfully:', data);
+      console.log('Form submitted successfully to Supabase:', data);
+
+      // Then, send email via API route
+      const emailResponse = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!emailResponse.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      console.log('Email sent successfully');
+
       // Track form submission with all data
       posthog?.capture('form_submitted', {
         ...formData,
         total_steps: step,
         step_names: Object.values(stepNames).slice(0, step)
-      })
+      });
+
       nextStep(); // Move to the success page
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -116,7 +134,7 @@ export default function Form() {
         step: step,
         step_name: stepNames[step],
         form_data: formData
-      })
+      });
     }
   };
 
