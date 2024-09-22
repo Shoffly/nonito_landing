@@ -44,7 +44,8 @@ export default function Footer() {
       console.log('Upsell images:', upsellimages); // Add this line for debugging
     return (
         <div className={styles.container}>
-            <h1 class="tagline">Take your business to the next level</h1>
+          <ImageCarousel images={upsellimages} />
+          <h1 class="tagline">Take your business to the next level</h1>
             <Link
                 href="/form"
                 class="button cta"
@@ -52,7 +53,7 @@ export default function Footer() {
                 Get Demo
             </Link>
             <div className={styles.carouselSection}>
-        <ImageCarousel images={upsellimages} />
+        
       </div>
 
             <footer>

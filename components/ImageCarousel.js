@@ -17,7 +17,7 @@ const ImageCarousel = ({ images }) => {
         <div className={styles.carouselTrack}>
           {duplicatedImages.map((image, index) => (
             <div key={index} className={styles.carouselItem}>
-              <Link href={image.link}>
+              
                 <Image
                   src={image.src}
                   alt={image.alt}
@@ -25,7 +25,7 @@ const ImageCarousel = ({ images }) => {
                   height={image.height}
                   layout="responsive"
                 />
-              </Link>
+              
             </div>
           ))}
         </div>
