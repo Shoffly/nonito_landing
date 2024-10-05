@@ -175,6 +175,17 @@
   min-height: 3em;  /* Ensures consistent card heights */
 }
 
+.freeBadge {
+  background-color: #4CAF50;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 10px;
+  display: inline-block;
+}
+
 @media (min-width: 768px) {
   .title {
     text-align: center;

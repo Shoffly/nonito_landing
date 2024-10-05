@@ -24,8 +24,8 @@ export default function Home() {
     posthog?.capture('homepage_view')
   }, [posthog])
 
-  const trackComponentView = (componentName) => {
-    posthog?.capture('component_view', { component: componentName })
+  const tracmpkComponentView = (componentName) => {
+    posthog?.capture('coonent_view', { component: componentName })
   }
 
   return (

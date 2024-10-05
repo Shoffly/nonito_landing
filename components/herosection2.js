@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Hero2.module.css';
 import { TypeAnimation } from 'react-type-animation';
+import { getCalApi } from "@calcom/embed-react";
 
 const HeroSection = () => {
+  useEffect(() => {
+    (async function () {
+      try {
+        const cal = await getCalApi({"namespace":"30min"});
+        cal("ui", {
+          "theme":"dark",
+          "styles":{"branding":{"brandColor":"#4caf50"}},
+          "hideEventTypeDetails":false,
+          "layout":"month_view"
+        });
+      } catch (error) {
+        console.error("Error initializing Cal API:", error);
+      }
+    })();
+  }, []);
+
   return (
     <section className={styles.heroWrapper}>
       <div className={styles.heroContent}>
@@ -29,15 +46,20 @@ const HeroSection = () => {
             />
           </h1>
           <p className={styles.heroSubtitle}>
-            Grow your audience, create personalized messaging at scale and unlock the power of tracking links with Nonito.
+            Grow your brand, create personalized messaging at scale and unlock the power of tracking links with Nonito.
           </p>
           <div className={styles.ctaContainer}>
-            <Link href="/form">
-              <button className={styles.primaryCta}>Get Demo</button>
+            <Link href="https://mini.nonito.xyz/signup">
+              <button className={styles.primaryCta}>Get Started</button>
             </Link>
-            <Link href="/pricing">
-              <span className={styles.secondaryCta}>See Plans</span>
-            </Link>
+            <button 
+              className={styles.secondaryCta}
+              data-cal-namespace="30min"
+              data-cal-link="nonito/30min"
+              data-cal-config='{"layout":"month_view","theme":"dark"}'
+            >
+              Schedule demo
+            </button>
           </div>
         </div>
       </div>

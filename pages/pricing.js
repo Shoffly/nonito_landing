@@ -16,8 +16,8 @@ const PricingPage = () => {
 
   const tiers = [
     {
-      name: 'Just Links',
-      fixedCost: 500,
+      name: 'Nano',
+      fixedCost: 0,
       features: [
         'Unlimited Tracking Links',
         'Unlimited QR codes',
@@ -26,10 +26,11 @@ const PricingPage = () => {
       ],
       summary: 'The complete solution for tracking and managing your links.',
       noSms: true,
-      freeTrial: true,
+      freeTrial: false,
       buttonLink: 'https://mini.nonito.xyz/signup',
       buttonText: 'Sign up now',
     },
+   
     {
       name: 'Mini',
       fixedCost: 3000,
@@ -158,19 +159,20 @@ const PricingPage = () => {
                 <p className={styles.tierSummary}>{tier.summary}</p>
                 <div className={styles.pricingDetails}>
                   <p className={styles.price}>
-                    {tier.noSms ? (
-                      <>
-                       <span className={styles.subtext}>only</span><br />
-{formatCurrency(tier.fixedCost)}/month
-                      </>
+                    <span className={styles.subtext}>
+                      {tier.fixedCost === 0 ? 'completely' : tier.noSms ? 'only' : 'from'}
+                    </span>
+                    <br />
+                    {tier.fixedCost === 0 ? (
+                      'FREE'
+                    ) : tier.noSms ? (
+                      formatCurrency(tier.fixedCost)
                     ) : (
-                      <>
-                        <span className={styles.subtext}>from</span><br />
-                        {formatCurrency(calculateTotalCost(tier))}/month
-                      </>
+                      formatCurrency(calculateTotalCost(tier))
                     )}
+                    {tier.fixedCost !== 0 && '/month'}
                   </p>
-                  {!tier.noSms && (
+                  {!tier.noSms && tier.fixedCost !== 0 && (
                     <span className={styles.subtext2}>
                       EGP {tier.fixedCost} + EGP {smsCostPerUnit.toFixed(2)} per SMS
                       {smsManagement === 'existing' && '*'}
