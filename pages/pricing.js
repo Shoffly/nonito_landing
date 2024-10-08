@@ -30,12 +30,26 @@ const PricingPage = () => {
       buttonLink: 'https://mini.nonito.xyz/signup',
       buttonText: 'Sign up now',
     },
+     {
+      name: 'Micro',
+      fixedCost: 900,
+      features: [
+        'All of Nano',
+        'Free branded .link domain',
+        'Analytics data for 12 months',
+      ],
+      summary: 'The complete solution for tracking and managing your links as a business.',
+      noSms: true,
+      freeTrial: false,
+      buttonLink: 'https://mini.nonito.xyz/signup',
+      buttonText: 'Sign up now',
+    },
    
     {
       name: 'Mini',
       fixedCost: 3000,
       features: [
-        'All of links',
+        'All of Micro',
         'SMS personalization',
         'SMS campaign tracking',
         'Retargeting SMS Campaigns',
@@ -50,7 +64,7 @@ const PricingPage = () => {
       name: 'Mega',
       fixedCost: 10000,
       features: [
-        'All Mini features',
+        'All of Mini',
         'Integration with Customer Database',
         'Cross-Channel Personalized Customer journeys',
         'Dedicated marketing automation support team',
