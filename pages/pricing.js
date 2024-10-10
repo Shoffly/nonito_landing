@@ -53,6 +53,7 @@ const PricingPage = () => {
         'SMS personalization',
         'SMS campaign tracking',
         'Retargeting SMS Campaigns',
+        'Unlimited Forms',
         'Analytics for Links, QR Codes, and SMS',
       ],
       summary: 'For growing companies looking to perfect sms engagement.',
