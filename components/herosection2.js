@@ -33,6 +33,8 @@ const HeroSection = () => {
               sequence={[
                 'SMS',
                 3000,
+                'Forms',
+                3000,
                 'Links',
                 3000,
                 'QR codes',
