@@ -212,7 +212,7 @@ const PricingPage = () => {
                 <div className={styles.pricingDetails}>
                   <p className={styles.price}>
                     <span className={styles.subtext}>
-                      {tier.monthlyPrice === 0 ? 'completely' : tier.noSms ? 'only' : 'from'}
+                      {tier.monthlyPrice === 0 ? 'completely' : tier.noSms ? 'only' : 'only'}
                     </span>
                     <br />
                     {tier.monthlyPrice === 0 ? (
