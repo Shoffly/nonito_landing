@@ -23,7 +23,6 @@ const PricingPage = () => {
       features: [
         'Unlimited Tracking Links',
         'Unlimited QR codes',
-        'Target users based on device type (iOS, Android)',
         'Analytics data for 6 months',
       ],
       summary: 'The complete solution for tracking and managing your links.',
@@ -38,6 +37,7 @@ const PricingPage = () => {
       annualPrice: 4800, // 10% discount applied
       features: [
         'All of Nano',
+'Target users based on device type (iOS, Android)',
 'Unlimited Forms without sms automation',
         'Analytics data for 12 months',
       ],
