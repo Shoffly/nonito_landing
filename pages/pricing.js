@@ -8,6 +8,7 @@ const PricingPage = () => {
   const posthog = usePostHog()  // Add this line
   const [smsCount, setSmsCount] = useState(20000);
   const [smsManagement, setSmsManagement] = useState('nonito');
+  const [billingCycle, setBillingCycle] = useState('annual');
 
   useEffect(() => {
     // Track page view
@@ -17,7 +18,8 @@ const PricingPage = () => {
   const tiers = [
     {
       name: 'Nano',
-      fixedCost: 0,
+      monthlyPrice: 0,
+      annualPrice: 0,
       features: [
         'Unlimited Tracking Links',
         'Unlimited QR codes',
@@ -32,50 +34,40 @@ const PricingPage = () => {
     },
      {
       name: 'Micro',
-      fixedCost: 900,
+      monthlyPrice: 900,
+      annualPrice: 4800, // 10% discount applied
       features: [
         'All of Nano',
-        'Free branded .link domain',
-        'Analytics data for 12 months',
-      ],
-      summary: 'The complete solution for tracking and managing your links as a business.',
+'Unlimited Forms without sms automation',
+        'Analytics data for 12 months',
+      ],
+      summary: 'The complete solution for tracking and managing your links.',
       noSms: true,
       freeTrial: false,
+      freeDomain: true,
       buttonLink: 'https://mini.nonito.xyz/signup',
       buttonText: 'Sign up now',
     },
    
     {
       name: 'Mini',
-      fixedCost: 3000,
+      monthlyPrice: 1500,
+      annualPrice: 12000, 
       features: [
         'All of Micro',
         'SMS personalization',
         'SMS campaign tracking',
         'Retargeting SMS Campaigns',
-        'Unlimited Forms',
+        'Unlimited Forms with sms automation',
         'Analytics for Links, QR Codes, and SMS',
       ],
       summary: 'For growing companies looking to perfect sms engagement.',
       freeTrial: true,
+      freeDomain: true,
       buttonLink: '/form',
       buttonText: 'Contact us now',
     },
-    {
-      name: 'Mega',
-      fixedCost: 10000,
-      features: [
-        'All of Mini',
-        'Integration with Customer Database',
-        'Cross-Channel Personalized Customer journeys',
-        'Dedicated marketing automation support team',
-        'Push notification integration',
-      ],
-      summary: 'Perfect for businesses with complex, multi-channel automation needs.',
-      buttonLink: '/form-mega',
-      buttonText: 'Coming Soon',
-      disabled: true,
-    },
+    
   ];
 
   const smsPricing = [
@@ -97,6 +89,10 @@ const PricingPage = () => {
     { count: 4000000, existingCost: 0.05, nonitoCost: 0.15 },
   ];
 
+  const smsOptions = smsManagement === 'nonito' 
+    ? [50000, 100000, 150000, 200000, 250000, 500000, 750000, 1000000, 2000000, 3000000, 4000000]
+    : smsPricing.map(p => p.count);
+
   const getSmsCost = (count) => {
     const pricing = smsPricing.find(p => p.count >= count) || smsPricing[smsPricing.length - 1];
     return smsManagement === 'existing' ? pricing.existingCost : pricing.nonitoCost;
@@ -104,10 +100,24 @@ const PricingPage = () => {
 
   const calculateTotalCost = (tier) => {
     if (tier.noSms) {
-      return tier.fixedCost;
+      return billingCycle === 'annual' ? tier.annualPrice : tier.monthlyPrice;
     }
     const smsCost = getSmsCost(smsCount) * smsCount;
-    return tier.fixedCost + smsCost;
+    const monthlyCost = tier.monthlyPrice + smsCost;
+    return billingCycle === 'annual' ? (monthlyCost * 12 * 0.9) : monthlyCost;
+  };
+
+  const calculateMonthlyPrice = (tier) => {
+    if (billingCycle === 'annual') {
+      return tier.annualPrice / 12;
+    }
+    return tier.monthlyPrice;
+  };
+
+  const calculateDiscount = (tier) => {
+    const monthlyTotal = tier.monthlyPrice * 12;
+    const annualTotal = tier.annualPrice;
+    return ((monthlyTotal - annualTotal) / monthlyTotal * 100).toFixed(0);
   };
 
   const formatCurrency = (amount) => {
@@ -135,6 +145,8 @@ const PricingPage = () => {
         <h1 className={styles.title}>Built to grow with your business. Flexible, transparent pricing.</h1>
         <p className={styles.description}>Whether you&apos;re just starting, scaling up, or on top of your game, Nonito has pricing plans to suit any business size.</p>
         
+        
+        
         <div className={styles.smsControl}>
           <label className={styles.sliderLabel}>
             Do you have an sms provider?
@@ -158,38 +170,68 @@ const PricingPage = () => {
             onChange={handleSmsCountChange}
             className={styles.smsDropdown}
           >
-            {smsPricing.map((option) => (
-              <option key={option.count} value={option.count}>
-                {option.count.toLocaleString()}
+            {smsOptions.map((option) => (
+              <option key={option} value={option}>
+                {option.toLocaleString()}
               </option>
             ))}
           </select>
+        </div>
+        {/* Move the billing toggle here, just above the pricing cards */}
+        <div className={styles.billingToggleContainer}>
+          <div className={styles.billingToggle}>
+            <span className={billingCycle === 'monthly' ? styles.active : ''}>Monthly</span>
+            <label className={styles.switch}>
+              <input
+                type="checkbox"
+                checked={billingCycle === 'annual'}
+                onChange={() => setBillingCycle(billingCycle === 'monthly' ? 'annual' : 'monthly')}
+              />
+              <span className={styles.slider}></span>
+            </label>
+            <span className={billingCycle === 'annual' ? styles.active : ''}>
+              Annual ({calculateDiscount(tiers[1])}% off)
+            </span>
+          </div>
         </div>
 
         <div className={styles.pricingTiers}>
           {tiers.map((tier) => (
             <div key={tier.name} className={styles.pricingCard} onClick={() => handleTierClick(tier.name)}>
               <div className={styles.cardContent}>
+                <div className={styles.badgeContainer}>
+                  {tier.freeDomain ? (
+                    <div className={styles.freeDomainBadge}>FREE branded .link domain</div>
+                  ) : (
+                    <div className={styles.placeholderBadge}></div>
+                  )}
+                </div>
                 <h2 className={styles.tierName}>{tier.name}</h2>
                 <p className={styles.tierSummary}>{tier.summary}</p>
+                
                 <div className={styles.pricingDetails}>
                   <p className={styles.price}>
                     <span className={styles.subtext}>
-                      {tier.fixedCost === 0 ? 'completely' : tier.noSms ? 'only' : 'from'}
+                      {tier.monthlyPrice === 0 ? 'completely' : tier.noSms ? 'only' : 'from'}
                     </span>
                     <br />
-                    {tier.fixedCost === 0 ? (
+                    {tier.monthlyPrice === 0 ? (
                       'FREE'
-                    ) : tier.noSms ? (
-                      formatCurrency(tier.fixedCost)
                     ) : (
-                      formatCurrency(calculateTotalCost(tier))
+                      <>
+                        {formatCurrency(calculateMonthlyPrice(tier))}
+                        <span className={styles.billingPeriod}>/month</span>
+                      </>
                     )}
-                    {tier.fixedCost !== 0 && '/month'}
                   </p>
-                  {!tier.noSms && tier.fixedCost !== 0 && (
+                  {billingCycle === 'annual' && tier.monthlyPrice !== 0 && (
+                    <p className={styles.billedAnnually}>
+                      billed annually
+                    </p>
+                  )}
+                  {!tier.noSms && tier.monthlyPrice !== 0 && (
                     <span className={styles.subtext2}>
-                      EGP {tier.fixedCost} + EGP {smsCostPerUnit.toFixed(2)} per SMS
+                      + EGP {smsCostPerUnit.toFixed(2)} per SMS
                       {smsManagement === 'existing' && '*'}
                     </span>
                   )}
