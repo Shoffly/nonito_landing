@@ -5,7 +5,7 @@ import { usePostHog } from 'posthog-js/react'
 import styles from '../styles/FeatureHighlight.module.css';
 
 const FeatureHighlight = () => {
-  const [activeTab, setActiveTab] = useState('sms');
+  const [activeTab, setActiveTab] = useState('forms');
   const posthog = usePostHog()
 
   const features = {
