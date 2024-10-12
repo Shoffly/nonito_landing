@@ -9,6 +9,13 @@ const FeatureHighlight = () => {
   const posthog = usePostHog()
 
   const features = {
+    forms: {
+      items: [
+        { image: '/Forms_1.svg', link: 'https://ni2.co/nonito-form' },
+        { image: '/Forms_2.svg', link: 'https://ni2.co/nonito-form' },
+        { image: '/Forms_3.svg', link: 'https://ni2.co/nonito-form' },
+      ],
+    },
     sms: {
       items: [
         { image: '/SMS_value1.svg', link: '/pricing' },
@@ -43,6 +50,12 @@ const FeatureHighlight = () => {
   return (
     <div className={styles.container}>
       <div className={styles.tabs}>
+      <button 
+          className={`${styles.tab} ${activeTab === 'forms' ? styles.active : ''}`}
+          onClick={() => handleTabClick('forms')}
+        >
+          Forms
+        </button>
         <button 
           className={`${styles.tab} ${activeTab === 'sms' ? styles.active : ''}`}
           onClick={() => handleTabClick('sms')}
