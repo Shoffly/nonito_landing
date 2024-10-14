@@ -69,9 +69,11 @@ const HeroSection = () => {
       const responseData = await response.json();
       console.log('Email sent successfully:', responseData.message);
 
-      // Clear the email input and show success message
+      // Clear the email input
       setEmail('');
-      setSuccessMessage("Thank you! You will receive an email in your inbox soon.");
+
+      // Redirect to mini.nonito.xyz/signup
+      window.location.href = 'https://mini.nonito.xyz/signup';
     } catch (error) {
       console.error('Error submitting email:', error);
       setSuccessMessage('An error occurred. Please try again later.');
@@ -123,7 +125,7 @@ const HeroSection = () => {
                     disabled={isSubmitting}
                   />
                   <button type="submit" className={styles.primaryCta} disabled={isSubmitting}>
-                    {isSubmitting ? <div className={styles.spinner}></div> : 'Sign up'}
+                    {isSubmitting ? <div className={styles.spinner}></div> : 'Get Started'}
                   </button>
                 </form>
                 {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
