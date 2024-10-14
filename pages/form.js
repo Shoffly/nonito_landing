@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import styles from '../styles/Form.module.css';
 import Nav from "../components/Nav"
-import { usePostHog } from 'posthog-js/react'  // Add this import
+import { usePostHog } from 'posthog-js/react'
 
 // Initialize Supabase client
 const supabase = createClient('https://nztwxdxvqncqwjmirasr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56dHd4ZHh2cW5jcXdqbWlyYXNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTkzOTg1OTUsImV4cCI6MjAzNDk3NDU5NX0.y9WXeisP-eHEvRnKNymmDOP9mIeh82D-bTfGqNV9svw');
 
 export default function Form() {
-  const posthog = usePostHog()  // Add this line
+  const posthog = usePostHog()
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     name: '',
@@ -20,6 +20,8 @@ export default function Form() {
   const [otherSellingMethod, setOtherSellingMethod] = useState('');
   const [otherSmsCampaign, setOtherSmsCampaign] = useState('');
   const [isFading, setIsFading] = useState(false);
+  const [isStepValid, setIsStepValid] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const updateFormData = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -49,9 +51,37 @@ export default function Form() {
       initial_step: step,
       step_name: stepNames[step]
     })
-  }, [posthog, step])
+  }, [posthog, step, stepNames])
+
+  useEffect(() => {
+    validateStep();
+  }, [formData, step]);
+
+  const validateStep = () => {
+    switch(step) {
+      case 1:
+        setIsStepValid(formData.name.trim() !== '');
+        break;
+      case 2:
+        setIsStepValid(formData.businessName.trim() !== '');
+        break;
+      case 3:
+        setIsStepValid(formData.sellingMethods.length > 0);
+        break;
+      case 4:
+        setIsStepValid(formData.smsCampaigns.length > 0);
+        break;
+      case 5:
+        setIsStepValid(formData.phoneNumber.trim() !== '');
+        break;
+      default:
+        setIsStepValid(true);
+    }
+  };
 
   const nextStep = () => {
+    if (!isStepValid) return;
+
     setIsFading(true);
     setTimeout(() => {
       const currentStep = step;
@@ -87,6 +117,10 @@ export default function Form() {
   };
 
   const handleSubmit = async () => {
+    if (!isStepValid) return;
+
+    setIsSubmitting(true);
+
     try {
       // First, submit to Supabase
       const { data, error } = await supabase
@@ -135,6 +169,8 @@ export default function Form() {
         step_name: stepNames[step],
         form_data: formData
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -273,7 +309,9 @@ export default function Form() {
         }}>
           {renderStep()}
           {step < 6 && (
-            <button type="submit">{step < 5 ? 'OK' : 'Submit'}</button>
+            <button type="submit" disabled={!isStepValid || isSubmitting}>
+              {isSubmitting ? <div className={styles.spinner}></div> : (step < 5 ? 'OK' : 'Submit')}
+            </button>
           )}
         </form>
       </div>

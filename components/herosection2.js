@@ -93,13 +93,13 @@ const HeroSection = () => {
             <TypeAnimation
               sequence={[
                 'SMS',
-                3000,
+                4000,
                 'Forms',
-                3000,
+                4000,
                 'Links',
-                3000,
+                4000,
                 'QR codes',
-                3000,
+                4000,
               ]}
               wrapper="span"
               speed={50}
