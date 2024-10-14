@@ -17,7 +17,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     // Force the test variant locally
-    const forceTestVariant = true; // Set this to false to see the control variant
+    //const forceTestVariant = true; // Set this to false to see the control variant
 
     if (forceTestVariant) {
       setIsTestVariant(true);
