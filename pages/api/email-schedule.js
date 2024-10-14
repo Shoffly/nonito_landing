@@ -35,7 +35,7 @@ const WelcomeEmail = ({ email }) => (
         </Section>
         <Heading style={h1}>Welcome to Nonito!</Heading>
         <Text style={text}>
-          Thank you for your interest in Nonito. We're excited to help you grow your business!
+          Thank you for your interest in Nonito. We&apos;re excited to help you grow your business!
         </Text>
         <Text style={text}>To get started, you have two options:</Text>
 
@@ -44,7 +44,7 @@ const WelcomeEmail = ({ email }) => (
             Sign Up Now
           </Button>
         </Section>
-        
+        <Text style={text}>or</Text>
         <Section style={buttonContainer}>
           <Button pX={20} pY={12} style={button} href="https://cal.com/nonito/30min">
             Schedule a Demo
@@ -52,7 +52,7 @@ const WelcomeEmail = ({ email }) => (
         </Section>
 
         <Text style={text}>
-          By scheduling a demo, you'll get your free .link SMS integration and access to Nonito forms.
+          By scheduling a demo, you&apos;ll get your free .link SMS integration and access to Nonito forms.
         </Text>
 
         <Section>
