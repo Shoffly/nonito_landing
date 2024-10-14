@@ -109,7 +109,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className={styles.heroSubtitle}>
-            Create personalized SMSes at scale and unlock the power of tracking links with Nonito.
+            Create SMS automations at scale and unlock the power of tracking links with Nonito.
           </p>
           <div className={styles.ctaContainer}>
             {isTestVariant ? (
