@@ -109,7 +109,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className={styles.heroSubtitle}>
-            Grow your brand, create personalized messaging at scale and unlock the power of tracking links with Nonito.
+            Create personalized SMSes at scale and unlock the power of tracking links with Nonito.
           </p>
           <div className={styles.ctaContainer}>
             {isTestVariant ? (
@@ -125,7 +125,7 @@ const HeroSection = () => {
                     disabled={isSubmitting}
                   />
                   <button type="submit" className={styles.primaryCta} disabled={isSubmitting}>
-                    {isSubmitting ? <div className={styles.spinner}></div> : 'Get Started'}
+                    {isSubmitting ? <div className={styles.spinner}></div> : 'Start for Free'}
                   </button>
                 </form>
                 {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
@@ -133,7 +133,7 @@ const HeroSection = () => {
             ) : (
               <>
                 <Link href="https://mini.nonito.xyz/signup" onClick={() => posthog.capture('get_started_clicked')}>
-                  <button className={styles.primaryCta}>Get Started</button>
+                  <button className={styles.primaryCta}>Start for Free</button>
                 </Link>
                 <button 
                   className={styles.secondaryCta}
