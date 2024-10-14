@@ -71,7 +71,7 @@ const HeroSection = () => {
 
       // Clear the email input and show success message
       setEmail('');
-      setSuccessMessage("Thank you! You&apos;ll receive an email in your inbox soon.");
+      setSuccessMessage("Thank you! You will receive an email in your inbox soon.");
     } catch (error) {
       console.error('Error submitting email:', error);
       setSuccessMessage('An error occurred. Please try again later.');

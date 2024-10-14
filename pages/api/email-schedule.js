@@ -153,7 +153,7 @@ export default async function handler(req, res) {
       const { data, error } = await resend.emails.send({
         from: 'Nonito <onboarding@email.nonito.xyz>',
         to: [email],
-        bcc: ['sunnymoh01@gmail.com']
+        bcc: ['sunnymoh01@gmail.com'],
         subject: 'Welcome to Nonito - Next Steps',
         react: WelcomeEmail({ email }),
       });
