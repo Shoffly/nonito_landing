@@ -16,16 +16,9 @@ const HeroSection = () => {
   const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
-    // Force the test variant locally
-    //const forceTestVariant = true; // Set this to false to see the control variant
-
-    if (forceTestVariant) {
-      setIsTestVariant(true);
-    } else {
-      // PostHog feature flag check
-      const emailSignUpFlag = posthog.getFeatureFlag('email-sign-up');
-      setIsTestVariant(emailSignUpFlag === 'test');
-    }
+    // PostHog feature flag check
+    const emailSignUpFlag = posthog.getFeatureFlag('email-sign-up');
+    setIsTestVariant(emailSignUpFlag === 'test');
 
     // Cal.com initialization
     (async function () {
