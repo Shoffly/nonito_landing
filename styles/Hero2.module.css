@@ -142,3 +142,67 @@
       font-size: 1.2rem;
     }
   }
+
+  .emailForm {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .emailInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .emailInput:focus {
+    border-color: #4caf50;
+  }
+
+  .primaryCta {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    min-width: 100px;
+  }
+
+  .primaryCta:hover {
+    background-color: #45a049;
+  }
+
+  .primaryCta:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+
+  .spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #3498db;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .successMessage {
+    margin-top: 10px;
+    color: #4caf50;
+    font-weight: bold;
+  }
