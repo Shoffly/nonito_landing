@@ -33,8 +33,8 @@ const PricingPage = () => {
     },
      {
       name: 'Micro',
-      monthlyPrice: 900,
-      annualPrice: 4800, // 10% discount applied
+      monthlyPrice: 1500,
+      annualPrice: 14400, 
       features: [
         'All of Nano',
 'Target users based on device type (iOS, Android)',
@@ -51,8 +51,8 @@ const PricingPage = () => {
    
     {
       name: 'Mini',
-      monthlyPrice: 1500,
-      annualPrice: 12000, 
+      monthlyPrice: 3500,
+      annualPrice: 33600, 
       features: [
         'All of Micro',
         'SMS personalization',
@@ -71,16 +71,16 @@ const PricingPage = () => {
   ];
 
   const smsPricing = [
-    { count: 500, existingCost: 0.09, nonitoCost: 0.27 },
-    { count: 1000, existingCost: 0.085, nonitoCost: 0.255 },
-    { count: 2500, existingCost: 0.08, nonitoCost: 0.24 },
-    { count: 5000, existingCost: 0.075, nonitoCost: 0.225 },
-    { count: 10000, existingCost: 0.07, nonitoCost: 0.21 },
-    { count: 15000, existingCost: 0.065, nonitoCost: 0.195 },
-    { count: 20000, existingCost: 0.06, nonitoCost: 0.18 },
-    { count: 50000, existingCost: 0.058, nonitoCost: 0.174 },
-    { count: 100000, existingCost: 0.056, nonitoCost: 0.168 },
-    { count: 200000, existingCost: 0.054, nonitoCost: 0.162 },
+    { count: 500, existingCost: 0.1, nonitoCost: 0.27 },
+    { count: 1000, existingCost: 0.1, nonitoCost: 0.255 },
+    { count: 2500, existingCost: 0.1, nonitoCost: 0.24 },
+    { count: 5000, existingCost: 0.1, nonitoCost: 0.225 },
+    { count: 10000, existingCost: 0.1, nonitoCost: 0.21 },
+    { count: 15000, existingCost: 0.085, nonitoCost: 0.195 },
+    { count: 20000, existingCost: 0.08, nonitoCost: 0.18 },
+    { count: 50000, existingCost: 0.07, nonitoCost: 0.25 },
+    { count: 100000, existingCost: 0.056, nonitoCost: 0.20 },
+    { count: 200000, existingCost: 0.054, nonitoCost: 0.18 },
     { count: 500000, existingCost: 0.052, nonitoCost: 0.156 },
     { count: 750000, existingCost: 0.051, nonitoCost: 0.153 },
     { count: 1000000, existingCost: 0.05, nonitoCost: 0.15 },
