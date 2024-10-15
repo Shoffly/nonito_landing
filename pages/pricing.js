@@ -33,8 +33,8 @@ const PricingPage = () => {
     },
      {
       name: 'Micro',
-      monthlyPrice: 1500,
-      annualPrice: 14400, 
+      monthlyPrice: 999,
+      annualPrice: 9590, 
       features: [
         'All of Nano',
 'Target users based on device type (iOS, Android)',
@@ -51,8 +51,8 @@ const PricingPage = () => {
    
     {
       name: 'Mini',
-      monthlyPrice: 3500,
-      annualPrice: 33600, 
+      monthlyPrice: 2999,
+      annualPrice: 28790, 
       features: [
         'All of Micro',
         'SMS personalization',
