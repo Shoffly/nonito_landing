@@ -2,19 +2,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
-  width: 90vw;
-  background-color: black; /* Adjust if you have a specific background color */
+  padding: 20px 233px 20px 233px;
+  width: 100vw;
+  background-color: #030F2D;
+  /* Adjust if you have a specific background color */
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  color: #F7F2EB;
 }
 
 .dot {
-  color: #4caf50;
+  color: #0147EB;
 }
 
 .navLinks {
@@ -23,7 +24,7 @@
 }
 
 .navButton {
-  color: white;
+  color: #F7F2EB;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 4px;
@@ -31,36 +32,41 @@
 }
 
 .navButton:hover {
-  background-color: #4caf50; /* Light green background on hover */
+  background-color: #0147EB; /* Light green background on hover */
   text-decoration: none;
 }
 
 .pricing {
-  color: white; /* Ensure the pricing link is visible */
+  color: #F7F2EB; 
 }
 
 .pricing:hover {
-  color: white; 
+  color: #F7F2EB;
   text-decoration: underline;
-  text-decoration-color: #4caf50;
+  text-decoration-color: #0147EB;
 }
 
 .hamburger {
   display: none;
   flex-direction: column;
+  
   cursor: pointer;
 }
 
 .hamburger div {
   width: 25px;
   height: 3px;
-  background-color: white;
+  background-color: #F7F2EB;
   margin: 3px 0;
 }
 
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
+  }
+
+  .nav {
+    padding: 20px 20px 20px 20px;
   }
 
   .navLinks {

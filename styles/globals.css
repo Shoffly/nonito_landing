@@ -8,8 +8,8 @@ body {
   padding: 0;
   margin: 0;
    font-family: "Poppins", sans-serif;
-  background: black;
-  color: #e9ede9;
+  background-color: #F7F2EB;
+  color: #030F2D;
 }
 
 a {
@@ -30,18 +30,18 @@ button {
 /* globals.css */
 input {
   font-family: "Open Sans", sans-serif;
-  caret-color: #4caf50;
+  caret-color: #0147EB;
   border-radius: 4px;
 }
 
 input:focus {
-  outline-color: #4caf50;
+  outline-color: #0147EB;
 }
 
 /* Styling for select options */
 select {
-  background-color: #333; /* Dark gray background */
-  color: white; /* White text color */
+  background-color: #272A33;
+  color: #F7F2EB;
   padding: 0.5em;
   border-radius: 4px;
   font-family: "Open Sans", sans-serif;
@@ -50,26 +50,26 @@ select {
 }
 
 option {
-  background-color: #333; /* Dark gray background */
+  background-color: #272A33;
   font-family: "Open Sans", sans-serif;
-  color: white; /* White text color */
+  color: #F7F2EB;
 }
 
 /* Hover effect for select */
 select:hover {
-  background-color: #4caf50; /* Green background on hover */
+  background-color: #0147EB;
 }
 
 option:hover {
-  background-color: #4caf50; /* Green background on hover */
+  background-color: #0147EB;
 }
 
 .button {
   padding: 0.75em;
   border: none;
   border-radius: 4px;
-  background-color: #4caf50;
-  color: white;
+  background-color: #0147EB;
+  color: #F7F2EB;
   font-size: 1em;
   margin-bottom: 1em;
   cursor: pointer;
@@ -77,5 +77,5 @@ option:hover {
 }
 
 .button:hover {
-  background-color: #4caf70;
+  background-color: #0147EB;
 }

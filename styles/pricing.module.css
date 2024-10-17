@@ -5,16 +5,19 @@
   flex-direction: column;
 }
 .smsDropdown{
+  background-color: #F7F2EB;
+  color: #030F2D;
+  font-weight: bold;
   width:80vw;
 }
 .pricingPage {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   align-items: center;
   flex-direction: column;
   text-align: center;
    display: flex;
-  color: #ffffff;
+  color: #030F2D;
 }
 
 .title {
@@ -41,11 +44,12 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  color: #F7F2EB;
   
   border-radius: 8px;
   padding: 20px;
-  /* Restore the background color */
-  background-color: #333; /* Or whatever the original color was */
+
+  background-color: #272A33;
   margin-bottom: 20px;
 }
 
@@ -56,25 +60,21 @@
 .tierName {
   font-size: 1.8rem;
   margin-bottom: 0.2rem;
-  text-decoration: underline;
-  text-decoration-color: #4caf50;
+  
 }
 
 .price {
   font-size: 1.8rem;
   font-weight: bold;
-  color: white;
+  
   margin-bottom: 5px;
 }
 .subtext{
-  color: white;
+
   font-size: 1.5rem;
 }
 
-.subtext2{
-  color: white;
-  
-}
+
 .featureList {
   list-style-type: none;
   padding: 0;
@@ -89,7 +89,7 @@
 }
 
 .checkmark {
-  color: #4CAF50;
+  color: #F7F2EB;
   margin-right: 0.5rem;
   font-weight: bold;
   flex-shrink: 0; /* Add this line */
@@ -111,8 +111,8 @@
 .chooseButton {
   width: 100%;
   padding: 10px;
-  background-color: #4caf50;
-  color: white;
+  background-color: #0147EB;
+  color: #F7F2EB;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -120,7 +120,7 @@
 }
 
 .chooseButton:hover {
-  background-color: black;
+  background-color: #030F2D
 }
 
 .chooseButton.disabled {
@@ -142,8 +142,8 @@
 }
 
 .freeTrialBadge {
-  background-color: #4CAF50;
-  color: white;
+  background-color: #0147EB;
+  color: #F7F2EB;
   padding: 3px 8px;
   border-radius: 12px;
   font-size: 0.7em;
@@ -152,8 +152,8 @@
   text-align: center;
 }
 .freeDomainBadge{
-  background-color: #222222;
-  color: white;
+  background-color: #D0E3FF;
+  color: #030F2D;
   padding: 3px 8px;
   border-radius: 12px;
   font-size: 1em;
@@ -210,13 +210,13 @@
 .billingToggle span {
   font-size: 0.9rem;
   margin: 0;
-  color: #888;
+  color: #272A33;
   flex: 1;
   text-align: center;
 }
 
 .billingToggle span.active {
-  color: #ffffff;
+  color: #030F2D;
   font-weight: bold;
 }
 
@@ -259,11 +259,11 @@
 }
 
 .switch input:checked + .slider {
-  background-color: #4CAF50;
+  background-color: #0147EB;
 }
 
 .switch input:focus + .slider {
-  box-shadow: 0 0 1px #4CAF50;
+  box-shadow: 0 0 1px #0147EB;
 }
 
 .switch input:checked + .slider:before {

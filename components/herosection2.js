@@ -87,30 +87,11 @@ const HeroSection = () => {
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
           <h1 className={styles.heroTitle}>
-            Sell more with
-          </h1>
-          <h1 className={styles.heroTitlehighlight}>
-            <TypeAnimation
-              sequence={[
-                'SMS',
-                4000,
-                'Forms',
-                4000,
-                'Links',
-                4000,
-                'QR codes',
-                4000,
-              ]}
-              wrapper="span"
-              speed={50}
-              style={{ display: 'inline-block' }}
-              repeat={Infinity}
-              className={styles.highlight}
-            />
+            <span className={styles.heroTitleEmphasis}>Drive Better</span> Connections <br />
+            with Every Message
           </h1>
           <p className={styles.heroSubtitle}>
-            Create SMS automations at scale and unlock the power of tracking links with Nonito.
-          </p>
+          Collect data, send tailored SMS, and retarget with precision. Build branded links and QR codes to drive connections through Nonito.</p>
           <div className={styles.ctaContainer}>
             {isTestVariant ? (
               <>

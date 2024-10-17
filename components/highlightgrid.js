@@ -11,23 +11,23 @@ const FeatureHighlight = () => {
   const features = {
     forms: {
       items: [
-        { image: '/Forms_1.svg', link: 'https://ni2.co/nonito-form' },
-        { image: '/Forms_2.svg', link: 'https://ni2.co/nonito-form' },
-        { image: '/Forms_3.svg', link: 'https://ni2.co/nonito-form' },
+        { image: '/Forms_1_blue.svg', link: 'https://ni2.co/nonito-form' },
+        { image: '/Forms_2_blue.svg', link: 'https://ni2.co/nonito-form' },
+        { image: '/Forms_3_blue.svg', link: 'https://ni2.co/nonito-form' },
       ],
     },
     sms: {
       items: [
-        { image: '/SMS_value1.svg', link: '/pricing' },
-        { image: '/SMS_value2.svg', link: '/form' },
-        { image: '/SMS_value3.svg', link: '/form' },
+        { image: '/SMS_value1_blue.svg', link: '/pricing' },
+        { image: '/SMS_value2_blue.svg', link: '/form' },
+        { image: '/SMS_value3_blue.svg', link: '/form' },
       ],
     },
     links: {
       items: [
-        { image: '/link_value_1.svg', link: 'https://mini.nonito.xyz/signup' },
-        { image: '/link_value_2.svg', link: 'https://mini.nonito.xyz/signup' },
-        { image: '/link_value_3.svg', link: 'https://mini.nonito.xyz/signup' },
+        { image: '/link_value_1_blue.svg', link: 'https://mini.nonito.xyz/signup' },
+        { image: '/link_value_2_blue.svg', link: 'https://mini.nonito.xyz/signup' },
+        { image: '/link_value_3_blue.svg', link: 'https://mini.nonito.xyz/signup' },
 
 
       ],

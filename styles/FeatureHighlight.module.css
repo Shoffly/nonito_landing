@@ -14,14 +14,14 @@
     margin: 0 0.5rem;
     background-color: transparent;
     border: none;
-    color: white;
+    color: #030F2D;
     cursor: pointer;
     font-size: 1.2rem;
     transition: all 0.3s ease;
   }
   
   .tab.active {
-    border-bottom: 2px solid #4caf50;
+    border-bottom: 2px solid #0147EB;
   }
   
   .featureGrid {

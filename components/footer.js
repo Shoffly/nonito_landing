@@ -44,13 +44,13 @@ export default function Footer() {
       console.log('Upsell images:', upsellimages); // Add this line for debugging
     return (
         <div className={styles.container}>
-          <ImageCarousel images={upsellimages} />
+         
           <h1 class="tagline">Take your business to the next level</h1>
             <Link
-                href="/form"
+                href="mini.nonito.xyz/signup"
                 class="button cta"
             >
-                Get Demo
+                Start for Free
             </Link>
             <div className={styles.carouselSection}>
         
