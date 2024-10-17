@@ -40,8 +40,8 @@ input:focus {
 
 /* Styling for select options */
 select {
-  background-color: #272A33;
-  color: #F7F2EB;
+  color: #030F2D;
+  background-color: white;
   padding: 0.5em;
   border-radius: 4px;
   font-family: "Open Sans", sans-serif;
@@ -50,14 +50,14 @@ select {
 }
 
 option {
-  background-color: #272A33;
   font-family: "Open Sans", sans-serif;
-  color: #F7F2EB;
+  color: white;
 }
 
 /* Hover effect for select */
 select:hover {
-  background-color: #0147EB;
+  background-color: #030F2D;  
+  color: white;
 }
 
 option:hover {
@@ -69,7 +69,7 @@ option:hover {
   border: none;
   border-radius: 4px;
   background-color: #0147EB;
-  color: #F7F2EB;
+  color: white;
   font-size: 1em;
   margin-bottom: 1em;
   cursor: pointer;
