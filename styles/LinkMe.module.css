@@ -1,0 +1,261 @@
+.linkMeSection {
+  background-color: #EDF1FA;
+  color: #031f39;
+  padding: 3rem 0;
+  border-radius: 12px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.tabItem {
+  margin: 0 1rem;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  color: #0058DD;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.tabButton.active {
+  opacity: 1;
+}
+
+.tabButton svg {
+  margin-bottom: 0.5rem;
+}
+
+.tabContent {
+  background-color: #ffffff;
+  color: #031f39;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form label {
+  margin-bottom: 0.5rem;
+}
+
+.form input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d3d4d7;
+  border-radius: 4px;
+}
+
+.submitButton {
+  background-color: #0058DD;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.featureList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.featureList li {
+  display: flex;
+  align-items: center;
+  padding-right: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.error {
+  color: #ff0000;
+  margin-top: 1rem;
+}
+
+.result {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.result a {
+  color: #0058DD;
+  word-break: break-all;
+  margin-right: 0.5rem;
+}
+
+.copyButton {
+  background-color: #0058DD;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.copyButton:hover {
+  background-color: #0046b0;
+}
+
+.note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.note strong {
+  font-weight: bold;
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: #0058DD;
+  color: #ffffff !important;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #0046b0;
+}
+
+.ctaText {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.qrCodePreview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.qrCodeContainer {
+  width: 330px;
+  height: 330px;
+}
+
+.downloadButton {
+  background-color: #0058DD;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem auto;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.downloadButton:hover {
+  background-color: #0046b0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .featureList li {
+        display: flex;
+        align-items: center;
+        padding-right: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  
+  .qrCodeContainer {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.successIcon {
+  color: #4CAF50;
+  margin-right: 0.5rem;
+}
+
+.checkIcon {
+  color: #0147eb; /* Blue color for checkmarks */
+  margin-right: 0.5rem;
+}

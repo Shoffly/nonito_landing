@@ -8,6 +8,7 @@ import Hero from "../components/herosection";
 import Footer from "../components/footer"
 import Nav from "../components/Nav"
 import { usePostHog } from 'posthog-js/react'  // Add this import
+import LinkMe from '../components/link_me';
 import HeroSection from '../components/herosection2';
 import FeatureHighlight from '../components/highlightgrid';
 
@@ -37,6 +38,7 @@ export default function Home() {
       </Head>
       <Nav onClick={() => trackComponentView('Nav')}></Nav>
       <HeroSection onClick={() => trackComponentView('Hero')}></HeroSection>
+      <LinkMe onClick={() => trackComponentView('LinkMe')} />
       <FeatureHighlight onClick={() => trackComponentView('FeatureHighlight')} />
       
       
