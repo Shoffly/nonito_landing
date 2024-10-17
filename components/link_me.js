@@ -103,8 +103,8 @@ const LinkMe = () => {
   const generateQRCode = (link) => {
     if (QRCodeStyling && qrRef.current) {
       const qrCode = new QRCodeStyling({
-        width: 330,
-        height: 330,
+        width: 250,
+        height: 250,
         type: 'svg',
         data: link,
         image: '',
