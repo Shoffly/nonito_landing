@@ -19,19 +19,22 @@ function useClientSideQR() {
 
 const LinkMe = () => {
   const [activeTab, setActiveTab] = useState('sms');
-  const [finalLink, setFinalLink] = useState('');
+  const [trackingLinkInput, setTrackingLinkInput] = useState('');
+  const [qrCodeInput, setQrCodeInput] = useState('');
   const [trackingLink, setTrackingLink] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [copySuccess, setCopySuccess] = useState('');
-  const [qrCodeImage, setQrCodeImage] = useState('');
   const [qrCode, setQrCode] = useState(null);
   const QRCodeStyling = useClientSideQR();
   const qrRef = useRef(null);
+  const [copySuccess, setCopySuccess] = useState('');
+  const [qrCodeImage, setQrCodeImage] = useState('');
   const [smsSuccess, setSmsSuccess] = useState(false);
   const [firstName, setFirstName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const posthog = usePostHog();
+  const [qrCodeLink, setQrCodeLink] = useState('');
+  const [qrCodeData, setQrCodeData] = useState(null);
 
   const handleTabClick = (tabId) => {
     setActiveTab(tabId);
@@ -49,18 +52,10 @@ const LinkMe = () => {
     return url;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    setError('');
-    setTrackingLink('');
-    setQrCodeImage('');
-
-    posthog?.capture('link_submit', { tab: activeTab, finalLink });
-
+  const createTrackingLink = async (inputUrl) => {
     const formData = {
       link_name: generateRandomString(),
-      final_link: addHttps(finalLink),
+      final_link: addHttps(inputUrl),
       sender_id: '192cfdc7-18ba-464d-a0c0-9cdc2848248a',
       split: false,
       android_link: "",
@@ -88,63 +83,79 @@ const LinkMe = () => {
       }
 
       const data = await response.json();
-      setTrackingLink(data.tracking_link);
-
-      if (activeTab === 'qr-code' && QRCodeStyling) {
-        generateQRCode(data.tracking_link);
-      }
+      return data.tracking_link;
     } catch (err) {
-      setError('An error occurred while creating the tracking link. Please try again.');
+      throw new Error('An error occurred while creating the tracking link. Please try again.');
+    }
+  };
+
+  const handleTrackingLinkSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+    setTrackingLink('');
+
+    posthog?.capture('tracking_link_submit', { finalLink: trackingLinkInput });
+
+    try {
+      const link = await createTrackingLink(trackingLinkInput);
+      setTrackingLink(link);
+    } catch (err) {
+      setError(err.message);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const generateQRCode = (link) => {
-    if (QRCodeStyling && qrRef.current) {
+  const handleQRCodeSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+    setQrCode(null);
+    setQrCodeLink('');
+    setQrCodeData(null);
+
+    console.log('QR Code submission started');
+    posthog?.capture('qr_code_submit', { finalLink: qrCodeInput });
+
+    try {
+      console.log('Creating tracking link');
+      const link = await createTrackingLink(qrCodeInput);
+      console.log('Tracking link created:', link);
+      setQrCodeLink(link);
+      setQrCodeData(link);  // Set the data for QR code generation
+    } catch (err) {
+      console.error('Error in QR Code generation:', err);
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+      console.log('QR Code submission finished');
+    }
+  };
+
+  useEffect(() => {
+    if (QRCodeStyling && qrCodeData && qrRef.current) {
+      console.log('Generating QR Code');
       const qrCode = new QRCodeStyling({
         width: 250,
         height: 250,
         type: 'svg',
-        data: link,
+        data: qrCodeData,
         image: '',
         margin: 10,
-        qrOptions: {
-          errorCorrectionLevel: 'H'
-        },
-        imageOptions: {
-          hideBackgroundDots: true,
-          imageSize: 0.4,
-          margin: 0,
-        },
-        dotsOptions: {
-          color: '#0147eb',
-          type: 'dots'
-        },
-        backgroundOptions: {
-          color: '#fffef2',
-        },
-        cornersSquareOptions: {
-          color: '#081f5c',
-          type: 'dot'
-        },
-        cornersDotOptions: {
-          color: '#0147eb',
-          type: 'dot'
-        },
+        qrOptions: { errorCorrectionLevel: 'H' },
+        imageOptions: { hideBackgroundDots: true, imageSize: 0.4, margin: 0 },
+        dotsOptions: { color: '#0147eb', type: 'dots' },
+        backgroundOptions: { color: '#fffef2' },
+        cornersSquareOptions: { color: '#081f5c', type: 'dot' },
+        cornersDotOptions: { color: '#0147eb', type: 'dot' },
       });
 
       qrRef.current.innerHTML = '';
       qrCode.append(qrRef.current);
       setQrCode(qrCode);
     }
-  };
-
-  useEffect(() => {
-    if (trackingLink && activeTab === 'qr-code' && QRCodeStyling) {
-      generateQRCode(trackingLink);
-    }
-  }, [trackingLink, activeTab, QRCodeStyling]);
+  }, [QRCodeStyling, qrCodeData, qrRef]);
 
   const handleCopy = async () => {
     try {
@@ -262,14 +273,14 @@ const LinkMe = () => {
                   <>
                     <h4>Create a Tracking Link</h4>
                     <p>Enter your long URL to generate a tracking link.</p>
-                    <form className={styles.form} onSubmit={handleSubmit}>
+                    <form className={styles.form} onSubmit={handleTrackingLinkSubmit}>
                       <label htmlFor="tracking-url">Enter your long URL</label>
                       <input 
-                        type="url" 
+                        type="text"
                         id="tracking-url" 
-                        placeholder="https://example.com/my-long-url" 
-                        value={finalLink}
-                        onChange={(e) => setFinalLink(e.target.value)}
+                        placeholder="example.com/my-long-url"
+                        value={trackingLinkInput}
+                        onChange={(e) => setTrackingLinkInput(e.target.value)}
                         required
                       />
                       <button type="submit" className={styles.submitButton} disabled={isLoading}>
@@ -305,18 +316,18 @@ const LinkMe = () => {
             {/* QR Code Tab Content */}
             {activeTab === 'qr-code' && (
               <div id="panel-qr-code" className={styles.tabPanel} role="tabpanel">
-                {!trackingLink ? (
+                {!qrCodeData ? (
                   <>
                     <h4>Create a QR Code</h4>
                     <p>Enter a URL to generate a QR code.</p>
-                    <form className={styles.form} onSubmit={handleSubmit}>
+                    <form className={styles.form} onSubmit={handleQRCodeSubmit}>
                       <label htmlFor="qr-content">Enter URL for QR code</label>
                       <input 
-                        type="url" 
+                        type="text"
                         id="qr-content" 
-                        placeholder="https://example.com" 
-                        value={finalLink}
-                        onChange={(e) => setFinalLink(e.target.value)}
+                        placeholder="example.com"
+                        value={qrCodeInput}
+                        onChange={(e) => setQrCodeInput(e.target.value)}
                         required
                       />
                       <button type="submit" className={styles.submitButton} disabled={isLoading}>
@@ -330,6 +341,7 @@ const LinkMe = () => {
                     <div className={styles.qrCodePreview}>
                       <div ref={qrRef} className={styles.qrCodeContainer}></div>
                     </div>
+                    <p>Scan this QR code to visit: {qrCodeLink}</p>
                     <button onClick={handleDownload} className={styles.downloadButton}>
                       <FaDownload /> Download QR Code
                     </button>
