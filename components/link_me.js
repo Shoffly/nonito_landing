@@ -280,7 +280,7 @@ const LinkMe = () => {
                 ) : (
                   <div className={styles.result}>
                     <h4>Your Tracking Link is Ready!</h4>
-                    <p>Here's your generated tracking link:</p>
+                    <p>Here is your generated tracking link:</p>
                     <div className={styles.linkContainer}>
                       <a href={trackingLink} target="_blank" rel="noopener noreferrer">{trackingLink}</a>
                       <button onClick={handleCopy} className={styles.copyButton}>
