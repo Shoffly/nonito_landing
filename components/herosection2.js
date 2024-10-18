@@ -72,8 +72,8 @@ const HeroSection = () => {
       // Clear the email input
       setEmail('');
 
-      // Redirect to mini.nonito.xyz/signup
-      window.location.href = 'https://mini.nonito.xyz/signup';
+      // Redirect to app.nonito.xyz/signup
+      window.location.href = 'https://app.nonito.xyz/signup';
     } catch (error) {
       console.error('Error submitting email:', error);
       setSuccessMessage('An error occurred. Please try again later.');
@@ -113,7 +113,7 @@ const HeroSection = () => {
               </>
             ) : (
               <>
-                <Link href="https://mini.nonito.xyz/signup" onClick={() => posthog.capture('get_started_clicked')}>
+                <Link href="https://app.nonito.xyz/signup" onClick={() => posthog.capture('get_started_clicked')}>
                   <button className={styles.primaryCta}>Start for Free</button>
                 </Link>
                 <button 
