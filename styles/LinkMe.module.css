@@ -225,6 +225,14 @@
 
 /* Media Queries */
 @media (max-width: 768px) {
+.featureList {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
     .featureList li {
         display: flex;
         align-items: center;
