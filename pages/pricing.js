@@ -17,7 +17,7 @@ const PricingPage = () => {
 
   const tiers = [
     {
-      name: 'Nano',
+      name: 'Links',
       monthlyPrice: 0,
       annualPrice: 0,
       features: [
@@ -32,7 +32,7 @@ const PricingPage = () => {
       buttonText: 'Sign up now',
     },
      {
-      name: 'Micro',
+      name: 'Links Plus',
       monthlyPrice: 999,
       annualPrice: 9590, 
       features: [
@@ -50,7 +50,7 @@ const PricingPage = () => {
     },
    
     {
-      name: 'Mini',
+      name: 'SMS',
       monthlyPrice: 2999,
       annualPrice: 28790, 
       features: [
