@@ -87,8 +87,8 @@ const HeroSection = () => {
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
           <h1 className={styles.heroTitle}>
-            Better Connections <br />
-            with Every SMS
+           <span className={styles.heroTitleEmphasis}>Better Connections<br />
+            with Every SMS</span>
           </h1>
           <p className={styles.heroSubtitle}>
           Collect data, send tailored SMS, and retarget with precision. Build branded links and QR codes to drive connections through Nonito.</p>
