@@ -50,7 +50,7 @@ const FeatureHighlight = () => {
   return (
     <div className={styles.container}>
       <div className={styles.intro}>
-      <h2 className={styles.heading}>The Platform for Modern Marketing Teams</h2>
+      <h2 className={styles.heading}>The Platform for Modern SMS Campaigns</h2>
           <h3 className={styles.subheading}>Collect Customer Data with forms, Send personalized SMS campaigns, and Track Conversions to engage your audience and connect with them at the right time with the right message.</h3>
        <div className={styles.ctaContainer}>
         <Link href="https://app.nonito.xyz/signup" className={styles.ctaButton}>Get Started for free</Link>
