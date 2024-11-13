@@ -51,8 +51,8 @@ const PricingPage = () => {
    
     {
       name: 'SMS',
-      monthlyPrice: 2999,
-      annualPrice: 28790, 
+      monthlyPrice: 10000,
+      annualPrice: 96000, 
       features: [
         'All of Micro',
         'SMS personalization',
