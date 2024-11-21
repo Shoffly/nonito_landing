@@ -46,10 +46,10 @@ export default function TermsAndConditions() {
           <h1>Refund Policy</h1>
           
           <h2>1. Subscription Fees</h2>
-          <p>All subscription fees for Nonito's services are non-refundable, except where required by law or specified below.</p>
+          <p>All subscription fees for Nonito&apos;s services are non-refundable, except where required by law or specified below.</p>
 
           <h2>2. Refund Eligibility</h2>
-          <p>Refunds may be issued if there is a verifiable technical error on Nonito's end that prevented access to the service during the subscription period. Please contact us within [X days] of the billing date to request a refund.</p>
+          <p>Refunds may be issued if there is a verifiable technical error on Nonito&apos;s end that prevented access to the service during the subscription period. Please contact us within [X days] of the billing date to request a refund.</p>
 
           <h2>3. Cancellation</h2>
           <p>You may cancel your subscription at any time, but you will not receive a prorated refund for the unused portion of your subscription.</p>
@@ -69,7 +69,7 @@ export default function TermsAndConditions() {
           <p>Nonito uses this information to provide, improve, and personalize our services, send transactional messages, and fulfill legal obligations.</p>
 
           <h2>3. Sharing of Information</h2>
-          <p>We do not share your information with third parties except for service providers and partners who assist in operating Nonito and with legal authorities as required.</p>
+          <p>We don&apos;t share your information with third parties except for service providers and partners who assist in operating Nonito and with legal authorities as required.</p>
 
           <h2>4. Data Security</h2>
           <p>We prioritize data security and use industry-standard measures to protect your information. However, we cannot guarantee complete security.</p>
@@ -87,7 +87,7 @@ export default function TermsAndConditions() {
         <section className="terms-section">
           <h1>About Us</h1>
           <h2>About Nonito</h2>
-          <p>Nonito is a growth-focused SMS marketing platform designed to help businesses engage their customers in a personalized, automated, and data-driven way. Our mission is to empower brands to build lasting connections through innovative SMS campaigns that drive growth and customer loyalty. Whether you're a small business or a large enterprise, Nonito provides flexible tools to design, automate, and track your SMS marketing efforts with ease.</p>
+          <p>Nonito is a growth-focused SMS marketing platform designed to help businesses engage their customers in a personalized, automated, and data-driven way. Our mission is to empower brands to build lasting connections through innovative SMS campaigns that drive growth and customer loyalty. Whether you&apos;re a small business or a large enterprise, Nonito provides flexible tools to design, automate, and track your SMS marketing efforts with ease.</p>
         </section>
       </div>
 
