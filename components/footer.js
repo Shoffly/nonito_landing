@@ -56,12 +56,11 @@ export default function Footer() {
         
       </div>
 
-            <footer>
-                <div>
-                    <div>
-                        <div>
-                            <p>© 2024 SRP</p>
-                        </div>
+            <footer className={styles.footer}>
+                <div className={styles.footerContent}>
+                    <div className={styles.footerLinks}>
+                        <Link href="/terms-conditions">Terms & Conditions</Link>
+                        <p>© 2024 SRP</p>
                     </div>
                 </div>
             </footer>

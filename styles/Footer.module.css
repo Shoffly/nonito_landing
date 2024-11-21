@@ -7,3 +7,38 @@
   text-align: center;
   align-content: center;
 }
+
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    border-top: 1px solid #eaeaea;
+    margin-top: 40px;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerLinks a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footerLinks a:hover {
+    text-decoration: underline;
+}
+
+.footerLinks p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
