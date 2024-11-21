@@ -39,7 +39,7 @@ export default function TermsAndConditions() {
           <p>Nonito reserves the right to modify these Terms at any time. Continued use of the platform constitutes acceptance of the revised Terms.</p>
 
           <h2>8. Contact Information</h2>
-          <p>If you have questions about these Terms, please contact us at [insert contact email].</p>
+          <p>If you have questions about these Terms, please contact us at m@nonito.xyz.</p>
         </section>
 
         <section className="terms-section">
@@ -55,13 +55,12 @@ export default function TermsAndConditions() {
           <p>You may cancel your subscription at any time, but you will not receive a prorated refund for the unused portion of your subscription.</p>
 
           <h2>4. Contact Us</h2>
-          <p>For refund inquiries, please reach out at [insert contact email].</p>
+          <p>For refund inquiries, please reach out at m@nonito.xyz.</p>
         </section>
 
         <section className="terms-section">
           <h1>Privacy Policy</h1>
-          <p className="date">Effective Date: [Insert date]</p>
-
+         
           <h2>1. Information We Collect</h2>
           <p>Nonito collects information you provide, such as account details and campaign data, as well as automatic information like usage statistics.</p>
 
@@ -75,13 +74,13 @@ export default function TermsAndConditions() {
           <p>We prioritize data security and use industry-standard measures to protect your information. However, we cannot guarantee complete security.</p>
 
           <h2>5. Your Rights</h2>
-          <p>Depending on your location, you may have rights to access, correct, or delete your information. Please contact us at [insert contact email] to make a request.</p>
+          <p>Depending on your location, you may have rights to access, correct, or delete your information. Please contact us at m@nonito.xyz to make a request.</p>
 
           <h2>6. Updates to Privacy Policy</h2>
           <p>Nonito may update this Privacy Policy. Changes will be effective immediately upon posting on our website.</p>
 
           <h2>7. Contact Information</h2>
-          <p>If you have questions about this Privacy Policy, please contact us at [insert contact email].</p>
+          <p>If you have questions about this Privacy Policy, please contact us at m@nonito.xyz.</p>
         </section>
 
         <section className="terms-section">
