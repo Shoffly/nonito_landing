@@ -173,14 +173,14 @@
     padding: 10px 15px;
     font-size: 16px;
     border: 1px solid #F7F2EB;
-    color: #F7F2EB;
+    color: black;
     border-radius: 4px;
     outline: none;
     transition: border-color 0.3s ease;
   }
 
   .emailInput:focus {
-    border-color: #081F5C;
+    border-color: #0147EB;
   }
 
   .primaryCta {
