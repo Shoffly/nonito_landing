@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from '/styles/pricing.module.css';
 import Nav from "../components/Nav";
 import Link from 'next/link';
-import { usePostHog } from 'posthog-js/react'  // Add this import
+import { usePostHog } from 'posthog-js/react'  
+import SEO from '../components/SEO';
 
 const PricingPage = () => {
   const posthog = usePostHog()  // Add this line
@@ -140,6 +141,7 @@ const PricingPage = () => {
 
   return (
     <div className={styles.container}>
+      <SEO />
       <Nav />
       <div className={styles.pricingPage}>
         <h1 className={styles.title}>Built to grow with your business. Flexible, transparent pricing.</h1>

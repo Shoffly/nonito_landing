@@ -11,6 +11,7 @@ import { usePostHog } from 'posthog-js/react'  // Add this import
 import LinkMe from '../components/link_me';
 import HeroSection from '../components/herosection2';
 import FeatureHighlight from '../components/highlightgrid';
+import SEO from '../components/SEO';
 
 
 
@@ -31,11 +32,8 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Nonito</title>
-        <meta name="description" content="| the growth tool for modern marketing" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SEO />
+      
       <Nav onClick={() => trackComponentView('Nav')}></Nav>
       <HeroSection onClick={() => trackComponentView('Hero')}></HeroSection>
       <LinkMe onClick={() => trackComponentView('LinkMe')} />

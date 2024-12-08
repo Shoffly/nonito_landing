@@ -1,13 +1,14 @@
-import Head from 'next/head';
+import SEO from '../components/SEO'
 import Nav from "../components/Nav";
 
 export default function TermsAndConditions() {
   return (
     <>
-      <Head>
-        <title>Terms and Conditions - Nonito</title>
-        <meta name="description" content="Nonito Terms and Conditions, Privacy Policy, and Refund Policy" />
-      </Head>
+      <SEO 
+        title="Terms and Conditions | Nonito"
+        description="Nonito Terms and Conditions, Privacy Policy, and Refund Policy"
+        pagePath="/terms-conditions"
+      />
       <Nav />
       <div className="terms-container">
         

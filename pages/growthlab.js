@@ -1,51 +1,116 @@
-import Head from 'next/head'
-import styles from '../styles/Blog.module.css'
+import { createClient } from '@supabase/supabase-js';
+import { useEffect, useState } from 'react';
+import SEO from '../components/SEO';
+import Nav from '../components/Nav';
+import styles from '../styles/Blog.module.css';
+import Link from 'next/link';
+import Image from 'next/image';
+
+// Initialize Supabase client
+const supabase = createClient('https://nztwxdxvqncqwjmirasr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56dHd4ZHh2cW5jcXdqbWlyYXNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTkzOTg1OTUsImV4cCI6MjAzNDk3NDU5NX0.y9WXeisP-eHEvRnKNymmDOP9mIeh82D-bTfGqNV9svw');
 
 export default function GrowthLab() {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Getting Started with Growth Marketing",
-      date: "2024-03-20",
-      excerpt: "Learn the fundamentals of growth marketing and how to apply them to your business.",
-      author: "Jane Doe"
-    },
-    {
-      id: 2,
-      title: "Data-Driven Decision Making",
-      date: "2024-03-18",
-      excerpt: "Discover how to use data analytics to make better marketing decisions.",
-      author: "John Smith"
+  const [featuredPost, setFeaturedPost] = useState(null);
+  const [regularPosts, setRegularPosts] = useState([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      // Fetch featured post
+      const { data: featured } = await supabase
+        .from('blogposts')
+        .select('id, title, slug, excerpt, author, category, image_url, published_at')
+        .eq('placement', 'featured')
+        .eq('status', 'published')
+        .single();
+
+      // Fetch regular posts
+      const { data: regular } = await supabase
+        .from('blogposts')
+        .select('id, title, slug, excerpt, author, category, image_url, published_at')
+        .eq('placement', 'normal')
+        .eq('status', 'published')
+        .order('published_at', { ascending: false });
+
+      setFeaturedPost(featured);
+      setRegularPosts(regular || []);
     }
-    
-  ]
+
+    fetchPosts();
+  }, []);
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Growth Lab Blog</title>
-        <meta name="description" content="Growth marketing insights and strategies" />
-      </Head>
+    <>
+      <SEO 
+        title="Growth Lab | Nonito"
+        description="Growth marketing insights and strategies"
+        pagePath="/growthlab"
+      />
+      <Nav />
+      <div className={styles.container}>
+        <main className={styles.main}>
+          <div className={styles.header}>
+            <h1 className={styles.title}>The Growth Lab<span className={styles.dot}>.</span></h1>
+            <p className={styles.subtitle}>Insights, strategies, and best practices for growth marketing.</p>
+            <div className={styles.divider}></div>
+          </div>
 
-      <main className={styles.main}>
-        <div className={styles.header}>
-        <h1 className={styles.title}>Nonito Growth Lab</h1>
-        </div>
-        
-        <div className={styles.grid}>
-          {blogPosts.map((post) => (
-            <article key={post.id} className={styles.card}>
-              <h2>{post.title}</h2>
-              <div className={styles.metadata}>
-                <span>{post.date}</span>
-                <span>By {post.author}</span>
+          {/* Featured Post Section */}
+          {featuredPost && (
+            <section className={styles.featured}>
+              <div className={styles.featuredContent}>
+                <span className={styles.category}>{featuredPost.category}</span>
+                <Link href={`/growthlab/${featuredPost.slug}`}>
+                  <h2 className={styles.featuredTitle}>{featuredPost.title}</h2>
+                </Link>
+                <p className={styles.excerpt}>{featuredPost.excerpt}</p>
+                <Link href={`/growthlab/${featuredPost.slug}`} className={styles.readMore}>
+                  Read More →
+                </Link>
               </div>
-              <p>{post.excerpt}</p>
-              <button className={styles.readMore}>Read More</button>
-            </article>
-          ))}
-        </div>
-      </main>
-    </div>
-  )
+              <div className={styles.featuredImage}>
+                {featuredPost.image_url && (
+                  <Image
+                    src={featuredPost.image_url}
+                    alt={featuredPost.title}
+                    width={600}
+                    height={400}
+                    objectFit="cover"
+                  />
+                )}
+              </div>
+            </section>
+          )}
+
+          {/* Regular Posts Grid */}
+          <div className={styles.grid}>
+            {regularPosts.map((post) => (
+              <article key={post.id} className={styles.card}>
+                {post.image_url && (
+                  <div className={styles.cardImage}>
+                    <Image
+                      src={post.image_url}
+                      alt={post.title}
+                      width={400}
+                      height={250}
+                      objectFit="cover"
+                    />
+                  </div>
+                )}
+                <div className={styles.cardContent}>
+                  <span className={styles.category}>{post.category}</span>
+                  <Link href={`/growthlab/${post.slug}`}>
+                    <h2>{post.title}</h2>
+                  </Link>
+                  <p className={styles.excerpt}>{post.excerpt}</p>
+                  <Link href={`/growthlab/${post.slug}`} className={styles.readMore}>
+                    Read More →
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </main>
+      </div>
+    </>
+  );
 }
