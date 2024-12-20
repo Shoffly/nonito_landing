@@ -12,6 +12,8 @@ import LinkMe from '../components/link_me';
 import HeroSection from '../components/herosection2';
 import FeatureHighlight from '../components/highlightgrid';
 import SEO from '../components/SEO';
+import PainPoints from '../components/painpoints';
+import Meet from '../components/meet';
 
 
 
@@ -36,9 +38,10 @@ export default function Home() {
       
       <Nav onClick={() => trackComponentView('Nav')}></Nav>
       <HeroSection onClick={() => trackComponentView('Hero')}></HeroSection>
-      <LinkMe onClick={() => trackComponentView('LinkMe')} />
+      <PainPoints onClick={() => trackComponentView('PainPoints')} />
+      <Meet onClick={() => trackComponentView('Meet')} />
       <FeatureHighlight onClick={() => trackComponentView('FeatureHighlight')} />
-      
+     
       
       
       

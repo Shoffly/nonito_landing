@@ -60,7 +60,7 @@ export default function Footer() {
                 <div className={styles.footerContent}>
                     <div className={styles.footerLinks}>
                         <Link href="/terms-conditions">Terms & Conditions</Link>
-                        <p>© 2024 SRP</p>
+                        <p>© 2024 Nonito</p>
                     </div>
                 </div>
             </footer>
