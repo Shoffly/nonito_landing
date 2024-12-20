@@ -138,6 +138,20 @@
   border-radius: 4px;
 }
 
+.mobileActions {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mobileSignUp {
+  display: none;
+}
+
+.desktopSignUp {
+  display: block;
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -197,5 +211,17 @@
 
   .dropdownItem {
     text-align: center;
+  }
+
+  .mobileActions {
+    display: flex;
+  }
+
+  .mobileSignUp {
+    display: block;
+  }
+
+  .desktopSignUp {
+    display: none;
   }
 }

@@ -21,10 +21,15 @@ export default function Nav() {
           Nonito<span className={styles.dot}>.</span>
         </div>
       </Link>
-      <div className={styles.hamburger} onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div className={styles.mobileActions}>
+        <Link href="https://mini.nonito.xyz/signup" className={styles.mobileSignUp}>
+          <div className={styles.navcall}>Sign up</div>
+        </Link>
+        <div className={styles.hamburger} onClick={toggleMenu}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
       <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
         <div className={styles.toolsDropdown}>
@@ -41,7 +46,7 @@ export default function Nav() {
         <Link href="/pricing">
           <div className={styles.navButton}>Pricing</div>
         </Link>
-        <Link href="https://mini.nonito.xyz/signup">
+        <Link href="https://mini.nonito.xyz/signup" className={styles.desktopSignUp}>
           <div className={styles.navcall}>Sign up</div>
         </Link>
       </div>
