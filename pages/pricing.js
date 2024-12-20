@@ -24,7 +24,7 @@ const PricingPage = () => {
         setExchangeRate(data.rates.EGP);
       } catch (error) {
         console.error('Error fetching exchange rate:', error);
-        setExchangeRate(31); // Fallback rate if API fails
+        setExchangeRate(55); // Fallback rate if API fails
       }
     };
     
