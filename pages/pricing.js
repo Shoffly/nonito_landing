@@ -10,13 +10,28 @@ const PricingPage = () => {
   const [smsCount, setSmsCount] = useState(20000);
   const [smsManagement, setSmsManagement] = useState('nonito');
   const [billingCycle, setBillingCycle] = useState('annual');
+  const [exchangeRate, setExchangeRate] = useState(null);
 
   useEffect(() => {
     // Track page view
     posthog?.capture('pricing_page_view')
+    
+    // Fetch exchange rate
+    const fetchExchangeRate = async () => {
+      try {
+        const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
+        const data = await response.json();
+        setExchangeRate(data.rates.EGP);
+      } catch (error) {
+        console.error('Error fetching exchange rate:', error);
+        setExchangeRate(31); // Fallback rate if API fails
+      }
+    };
+    
+    fetchExchangeRate();
   }, [posthog])
 
-  const tiers = [
+  const tiersUSD = [
     {
       name: 'Links',
       monthlyPrice: 0,
@@ -34,8 +49,8 @@ const PricingPage = () => {
     },
      {
       name: 'Links Plus',
-      monthlyPrice: 999,
-      annualPrice: 9590, 
+      monthlyPrice: 32,
+      annualPrice: 309, 
       features: [
         'All of Nano',
 'Target users based on device type (iOS, Android)',
@@ -52,8 +67,8 @@ const PricingPage = () => {
    
     {
       name: 'SMS',
-      monthlyPrice: 10000,
-      annualPrice: 96000, 
+      monthlyPrice: 322,
+      annualPrice: 3096, 
       features: [
         'All of Micro',
         'SMS personalization',
@@ -138,6 +153,12 @@ const PricingPage = () => {
   const handleTierClick = (tierName) => {
     posthog?.capture('pricing_tier_clicked', { tier: tierName })
   }
+
+  const tiers = tiersUSD.map(tier => ({
+    ...tier,
+    monthlyPrice: Math.round(tier.monthlyPrice * (exchangeRate || 31)),
+    annualPrice: Math.round(tier.annualPrice * (exchangeRate || 31))
+  }));
 
   return (
     <div className={styles.container}>
