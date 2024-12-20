@@ -87,7 +87,7 @@ const HeroSection = () => {
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
           <h1 className={styles.heroTitle}>
-           <span className={styles.heroTitleEmphasis}>SMS Campaigns with <br />Superpowers
+           <span className={styles.heroTitleEmphasis}>SMS Campaigns with Superpowers
             </span>
           </h1>
           <p className={styles.heroSubtitle}>
