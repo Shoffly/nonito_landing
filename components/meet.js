@@ -32,7 +32,7 @@ const Meet = () => {
           </div>
 
           <div className={styles.feature}>
-            <img src="/retargeting campaign.svg" alt="Retargeting campaign  interface" />
+            <img src="/Retargeting campaign.svg" alt="Retargeting campaign  interface" />
             <div className={styles.featureContent}>
               <h2>Retarget your customers based on real data.</h2>
               <p>Launch retargeting campaigns based on your customers behaviour and data with your previous SMS campaigns.</p>

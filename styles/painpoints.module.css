@@ -40,6 +40,7 @@
 .text {
   color: #4a5568;
   font-size: 1.1rem;
+  margin-top: -0.4rem;
   line-height: 1.5;
 }
 
