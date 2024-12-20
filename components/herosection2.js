@@ -110,6 +110,21 @@ const HeroSection = () => {
                   </button>
                 </form>
                 {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
+                <div className={styles.integrationsContainer}>
+                  <p className={styles.integratesWithText}>Integrates with</p>
+                  <div className={styles.logoContainer}>
+                    <img 
+                      src="/shopify_monotone_white.svg" 
+                      alt="Shopify" 
+                      className={styles.integrationLogo}
+                    />
+                    <img 
+                      src="/SVG_logo_Zyda.svg" 
+                      alt="Zyda" 
+                      className={styles.integrationLogo}
+                    />
+                  </div>
+                </div>
               </>
             ) : (
               <>
