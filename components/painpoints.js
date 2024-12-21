@@ -5,11 +5,11 @@ const PainPoints = () => {
   const points = [
     {
       number: "1",
-      text: "Collecting & Organizing customer phone numbers can be hectic with all your systems"
+      text: "Collecting & Organizing customer phone numbers can be hectic with all your sources."
     },
     {
       number: "2",
-      text: "You are unsure of how customers are engaging with your smses"
+      text: "You are unsure of how your customers are engaging with your SMS campaigns."
     },
     {
       number: "3",
