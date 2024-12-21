@@ -55,6 +55,7 @@ const PricingPage = () => {
         'All of Nano',
 'Target users based on device type (iOS, Android)',
 'Unlimited Forms without sms automation',
+'Unlimited Forms responses',
         'Analytics data for 12 months',
       ],
       summary: 'The complete solution for tracking and managing your links.',
