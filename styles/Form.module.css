@@ -3,13 +3,15 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .formContainer {
   font-family: 'Poppins', sans-serif;
-  background-color: black;
-  color: white;
+  color: #030F2D;
+  
   padding: 20px;
+  width: 100%;
   max-width: 500px;
   margin: 0 auto;
 }
@@ -23,12 +25,12 @@
 
 .progress {
   height: 100%;
-  background-color: #4caf50;
+  background-color: #0147EB;
   transition: width 0.3s ease;
 }
 
 .formContainer h2 {
-  color: white;
+  
   font-size: 18px;
   margin-bottom: 20px;
 }
@@ -38,10 +40,10 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #333;
+  background-color: #F7F2EB;
   border: none;
-  color: white;
-  border-bottom: 1px solid #4caf50;
+  color: #272A33;
+  border-bottom: 1px solid #0147EB;
 }
 
 .checkboxContainer {
@@ -53,7 +55,7 @@
 .checkboxOption {
   display: flex;
   align-items: center;
-  background-color: #333;
+  background-color: #272A33;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -67,18 +69,18 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 2px solid #4caf50;
+  border: 2px solid #0147EB;
   border-radius: 3px;
   margin-right: 10px;
 }
 
 .checkboxOption input[type="checkbox"]:checked + span {
-  background-color: #4caf50;
+  background-color: #0147EB;
 }
 
 .formContainer button {
-  background-color: #4caf50;
-  color: white;
+  background-color: #0147EB;
+  color: #F7F2EB;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -87,7 +89,8 @@
 }
 
 .formContainer button:hover {
-  background-color: #45a049;
+  color: #F7F2EB;
+  background-color: #030F2D;
 }
 
 .countrySelector {
@@ -97,8 +100,8 @@
 }
 
 .countrySelector select {
-  background-color: #333;
-  color: white;
+  background-color: #272A33;
+  color: #F7F2EB;
   border: none;
   padding: 5px;
   margin-right: 10px;
@@ -108,9 +111,7 @@
   flex-grow: 1;
 }
 
-.question {
-  color: white;
-}
+
 
 .formContent {
   opacity: 1;
@@ -147,4 +148,37 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+  .formContainer {
+    max-width: 800px;
+    padding: 40px;
+  }
+
+  .formContainer input[type="text"],
+  .formContainer input[type="tel"] {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+
+  .checkboxOption {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+
+  .checkboxOption span {
+    width: 25px;
+    height: 25px;
+  }
+
+  .formContainer button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+
+  .countrySelector select {
+    padding: 10px;
+    font-size: 1.1rem;
+  }
 }

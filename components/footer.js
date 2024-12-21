@@ -47,7 +47,7 @@ export default function Footer() {
          
           <h1 class="tagline">Take your business to the next level</h1>
             <Link
-                href="mini.nonito.xyz/signup"
+                href="https://app.nonito.xyz/signup"
                 class="button cta"
             >
                 Start for Free
