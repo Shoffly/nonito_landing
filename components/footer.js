@@ -45,10 +45,10 @@ export default function Footer() {
     return (
         <div className={styles.container}>
           <div className={styles.cta}>
-          <h1 class="tagline">Strong Relationships start with a message.</h1>
+          <h1 className={styles.tagline}>Strong Relationships start with a message.</h1>
             <Link
                 href="https://cal.com/nonito/30min"
-                class="button cta"
+                className={styles.button_cta}
             >
                 Schedule demo
             </Link>

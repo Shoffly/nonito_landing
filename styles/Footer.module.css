@@ -29,6 +29,27 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#030F2D", en
   text-align: center;
   align-content: center;
 }
+.tagline{
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.button_cta{
+    background-color: #0147eb;
+    color: white;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button_cta:hover{
+    color: #0147eb;
+    background-color: white;
+    border-radius: 4px;
+}
 .footer {
     width: 100%;
     padding: 20px 0;
