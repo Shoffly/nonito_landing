@@ -93,8 +93,7 @@ const HeroSection = () => {
           <p className={styles.heroSubtitle}>
           Collect data, personalize and automate SMS campaigns at scale with Nonito.</p>
           <div className={styles.ctaContainer}>
-            {isTestVariant ? (
-              <>
+           
                 <form onSubmit={handleEmailSubmit} className={styles.emailForm}>
                   <input
                     type="email"
@@ -125,23 +124,7 @@ const HeroSection = () => {
                     />
                   </div>
                 </div>
-              </>
-            ) : (
-              <>
-                <Link href="https://app.nonito.xyz/signup" onClick={() => posthog.capture('get_started_clicked')}>
-                  <button className={styles.primaryCta}>Start for Free</button>
-                </Link>
-                <button 
-                  className={styles.secondaryCta}
-                  data-cal-namespace="30min"
-                  data-cal-link="nonito/30min"
-                  data-cal-config='{"layout":"month_view","theme":"dark"}'
-                  onClick={() => posthog.capture('demo_scheduled')}
-                >
-                  Schedule demo
-                </button>
-              </>
-            )}
+              
           </div>
         </div>
       </div>
