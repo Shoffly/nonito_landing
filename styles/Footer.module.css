@@ -84,3 +84,12 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#030F2D", en
     font-size: 14px;
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .cta{
+        padding: 20px;
+    }
+    .tagline{
+        font-size: 1.5rem;
+    }
+}
