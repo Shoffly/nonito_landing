@@ -1,18 +1,18 @@
 .heroWrapper {
     padding: 80px 20px;
-    height: 78vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #030F2D;
+    margin-bottom: 20px;
   }
   
   .heroContent {  
     max-width: 800px;
     width: 100%;
     text-align: center;
-    color: white;
+   
   }
   
   .textContent {
@@ -23,7 +23,7 @@
   
   .heroTitle {
     font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
-    line-height: 1.2;
+    line-height: 4.5rem;
     margin-bottom: 1rem;
     text-align: center;
   }
@@ -49,14 +49,14 @@
   
   .highlight {
 
-    color: #F7F2EB;
+    
     display: inline-block;
   }
   
   .heroSubtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: #F7F2EB;
+    line-height: 1.8rem;
     opacity: 0.8;
     max-width: 600px;
     text-align: center;
@@ -136,10 +136,13 @@
     align-items: center;
     font-size: 1rem;
   }
+
+  
   .superpowers {
-    background: linear-gradient(90deg, #4caf50, #a5d6a7, #4caf50);
+    background: linear-gradient(90deg, #3498db , #0147EB);
     background-size: 200%;
     -webkit-background-clip: text;
+    font-weight: 900;
     -webkit-text-fill-color: transparent;
     animation: gradientShift 50s ease-in-out infinite;
   
@@ -154,6 +157,7 @@
     
     .heroTitle {
       text-align: left;
+      line-height: 2.5rem;
     }
     .heroSubtitle {
       font-size: 1.2rem;
@@ -238,8 +242,8 @@
   }
 
   .integratesWithText {
-    color: #ffffff;
     font-size: 0.9rem;
+    font-weight: 500;
     opacity: 0.8;
     margin-bottom: 0.75rem;
   }
@@ -253,6 +257,6 @@
 
   .integrationLogo {
     height: 30px;
-    filter: brightness(0) invert(1);
+   filter: brightness(0) invert(0);
     opacity: 0.9;
   }

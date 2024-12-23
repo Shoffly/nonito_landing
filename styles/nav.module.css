@@ -1,14 +1,18 @@
 .nav {
   display: flex;
   position: sticky;
-  top: 0;
+  top: 20px;
   z-index: 1000;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
   justify-content: space-between;
-  padding: 20px 233px 20px 233px;
-  width: 100vw;
-  background-color: #030F2D;
-  /* Adjust if you have a specific background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 25px 25px 25px 25px;
+  background-color: rgba(3, 15, 45, 1);
+  opacity: 1;
+  width: 78vw;
+  border-radius: 1rem;
 }
 
 .logo {
@@ -168,6 +172,7 @@
   
   .nav {
     padding: 20px 20px 20px 20px;
+    width: 95vw;
   }
 
   .navLinks {

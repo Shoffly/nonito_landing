@@ -87,8 +87,8 @@ const HeroSection = () => {
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
           <h1 className={styles.heroTitle}>
-           <span className={styles.heroTitleEmphasis}>SMS Campaigns with Superpowers
-            </span>
+           <span className={styles.heroTitleEmphasis}>SMS Campaigns with <br></br><span className={styles.message}><span className={styles.superpowers}>Superpowers</span>
+            </span></span> 
           </h1>
           <p className={styles.heroSubtitle}>
           Collect data, personalize and automate SMS campaigns at scale with Nonito.</p>
