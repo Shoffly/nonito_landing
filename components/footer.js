@@ -44,14 +44,15 @@ export default function Footer() {
       console.log('Upsell images:', upsellimages); // Add this line for debugging
     return (
         <div className={styles.container}>
-         
-          <h1 class="tagline">Take your business to the next level</h1>
+          <div className={styles.cta}>
+          <h1 class="tagline">Strong Relationships start with a message.</h1>
             <Link
-                href="https://app.nonito.xyz/signup"
+                href="https://cal.com/nonito/30min"
                 class="button cta"
             >
-                Start for Free
+                Schedule demo
             </Link>
+            </div>
             <div className={styles.carouselSection}>
         
       </div>
