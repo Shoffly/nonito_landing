@@ -288,8 +288,12 @@ export default function ZydaAnalysis() {
         }
           .analysis-page {
             padding: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-direction: column;
+            
+            
           }
 
           @media (min-width: 768px) {
