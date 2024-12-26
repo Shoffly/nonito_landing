@@ -52,7 +52,7 @@ const PricingPage = () => {
       monthlyPrice: 32,
       annualPrice: 309, 
       features: [
-        'All of Nano',
+        'All of Links',
 'Target users based on device type (iOS, Android)',
 'Unlimited Forms without sms automation',
 'Unlimited Forms responses',
@@ -71,7 +71,7 @@ const PricingPage = () => {
       monthlyPrice: 152,
       annualPrice: 1500, 
       features: [
-        'All of Micro',
+        'All of Links Plus',
         'SMS personalization',
         'SMS campaign tracking',
         'Retargeting SMS Campaigns',
