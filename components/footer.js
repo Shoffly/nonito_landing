@@ -60,7 +60,11 @@ export default function Footer() {
             <footer className={styles.footer}>
                 <div className={styles.footerContent}>
                     <div className={styles.footerLinks}>
+                        <Link href="/about">About Us</Link>
+                        <Link href="/contact">Contact Us</Link>
                         <Link href="/terms-conditions">Terms & Conditions</Link>
+                        <Link href="/privacy-policy">Privacy Policy</Link>
+                        <Link href="/refund-policy">Refund Policy</Link>
                         <p>© 2024 Nonito</p>
                     </div>
                 </div>

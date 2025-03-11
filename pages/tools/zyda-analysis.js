@@ -292,7 +292,7 @@ export default function ZydaAnalysis() {
             margin-right: auto;
             display: flex;
             flex-direction: column;
-            
+             
             
           }
 
