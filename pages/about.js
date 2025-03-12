@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Nav from '../components/Nav';
 import Footer from '../components/footer';
-import styles from '../styles/About.module.css';
+
 
 export default function About() {
     return (
