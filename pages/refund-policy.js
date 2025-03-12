@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Nav from '../components/Nav';
 import Footer from '../components/footer';
-import styles from '../styles/Policy.module.css';
+import styles from '../styles/policy.module.css';
 
 export default function RefundPolicy() {
     return (
