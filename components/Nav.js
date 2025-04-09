@@ -46,7 +46,7 @@ export default function Nav() {
         <Link href="/pricing">
           <div className={styles.navButton}>Pricing</div>
         </Link>
-        <Link href="https://mini.nonito.io/signup" className={styles.desktopSignUp}>
+        <Link href="https://app.nonito.io/signup" className={styles.desktopSignUp}>
           <div className={styles.navcall}>Sign up</div>
         </Link>
       </div>
