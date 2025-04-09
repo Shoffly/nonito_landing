@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Nav from '../components/Nav';
 import Footer from '../components/footer';
-import styles from '../styles/Policy.module.css';
+import styles from '../styles/policy.module.css';
 
 export default function PrivacyPolicy() {
     return (
@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
 
                         <section>
                             <h2>3. Sharing of Information</h2>
-                            <p>We don't share your information with third parties except for:</p>
+                            <p>We don&apos;t share your information with third parties except for:</p>
                             <ul>
                                 <li>Service providers and partners who assist in operating Nonito</li>
                                 <li>Legal authorities as required by law</li>

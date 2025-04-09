@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Nav from '../components/Nav';
 import Footer from '../components/footer';
-import styles from '../styles/Policy.module.css';
+import styles from '../styles/policy.module.css';
 
 export default function RefundPolicy() {
     return (
@@ -19,7 +19,7 @@ export default function RefundPolicy() {
                         
                         <section>
                             <h2>1. Subscription Fees</h2>
-                            <p>All subscription fees for Nonito's services are non-refundable, except in specific circumstances outlined below. This applies to all our subscription tiers:</p>
+                            <p>All subscription fees for Nonito&apos;s services are non-refundable, except in specific circumstances outlined below. This applies to all our subscription tiers:</p>
                             <ul>
                                 <li>Just Links Plan</li>
                                 <li>Mini Plan</li>
@@ -31,7 +31,7 @@ export default function RefundPolicy() {
                             <h2>2. Refund Eligibility</h2>
                             <p>Refunds may be considered in the following cases:</p>
                             <ul>
-                                <li>Verifiable technical errors on Nonito's end that prevented access to the service</li>
+                                <li>Verifiable technical errors on Nonito&apos;s end that prevented access to the service</li>
                                 <li>Duplicate charges or billing errors</li>
                                 <li>Service unavailability exceeding 24 hours</li>
                             </ul>
@@ -64,7 +64,7 @@ export default function RefundPolicy() {
                             <ul>
                                 <li>Change of mind or no longer needing the service</li>
                                 <li>Misuse of the platform or violation of our terms</li>
-                                <li>Issues outside of Nonito's control</li>
+                                <li>Issues outside of Nonito&apos;s control</li>
                             </ul>
                         </section>
 
