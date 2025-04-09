@@ -44,7 +44,7 @@ const PricingPage = () => {
       summary: 'The complete solution for tracking and managing your links.',
       noSms: true,
       freeTrial: false,
-      buttonLink: 'https://mini.nonito.xyz/signup',
+      buttonLink: 'https://app.nonito.io/signup',
       buttonText: 'Sign up now',
     },
      {
@@ -62,7 +62,7 @@ const PricingPage = () => {
       noSms: true,
       freeTrial: false,
       freeDomain: true,
-      buttonLink: 'https://mini.nonito.xyz/signup',
+      buttonLink: 'https://app.nonito.io/signup',
       buttonText: 'Sign up now',
     },
    

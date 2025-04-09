@@ -72,8 +72,8 @@ const HeroSection = () => {
       // Clear the email input
       setEmail('');
 
-      // Redirect to app.nonito.xyz/signup
-      window.location.href = 'https://app.nonito.xyz/signup';
+      // Redirect to app.nonito.io/signup
+      window.location.href = 'https://app.nonito.io/signup';
     } catch (error) {
       console.error('Error submitting email:', error);
       setSuccessMessage('An error occurred. Please try again later.');
