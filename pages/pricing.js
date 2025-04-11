@@ -47,29 +47,28 @@ const PricingPage = () => {
       buttonLink: 'https://app.nonito.io/signup',
       buttonText: 'Sign up now',
     },
-     {
-      name: 'Links Plus',
-      monthlyPrice: 32,
-      annualPrice: 309, 
-      features: [
-        'All of Links',
-'Target users based on device type (iOS, Android)',
-'Unlimited Forms without sms automation',
-'Unlimited Forms responses',
+    {
+      name: 'Links Plus',
+      monthlyPrice: 109,
+      annualPrice: 1090,
+      features: [
+        'All of Links',
+        'Target users based on device type (iOS, Android)',
+        'Unlimited Forms without sms automation',
+        'Unlimited Forms responses',
         'Analytics data for 12 months',
       ],
       summary: 'The complete solution for tracking and managing your links.',
-      noSms: true,
-      freeTrial: false,
+      noSms: true,
+      freeTrial: false,
       freeDomain: true,
-      buttonLink: 'https://app.nonito.io/signup',
-      buttonText: 'Sign up now',
-    },
-   
+      buttonLink: 'https://app.nonito.io/signup',
+      buttonText: 'Sign up now',
+    },
     {
       name: 'SMS',
-      monthlyPrice: 152,
-      annualPrice: 1500, 
+      monthlyPrice: 218,
+      annualPrice: 2180,
       features: [
         'All of Links Plus',
         'SMS personalization',
@@ -84,7 +83,6 @@ const PricingPage = () => {
       buttonLink: '/form',
       buttonText: 'Contact us now',
     },
-    
   ];
 
   const smsPricing = [
