@@ -22,7 +22,7 @@ export default function Nav() {
         </div>
       </Link>
       <div className={styles.mobileActions}>
-        <Link href="https://app.nonito.io/signup" className={styles.mobileSignUp}>
+        <Link href="htt" className={styles.mobileSignUp}>
           <div className={styles.navcall}>Sign up</div>
         </Link>
         <div className={styles.hamburger} onClick={toggleMenu}>
