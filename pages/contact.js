@@ -27,7 +27,7 @@ export default function Contact() {
                         
                         <div className={styles.contactMethod}>
                             <h2>Address</h2>
-                            <p>Egypt, Cairo</p>
+                            <p> Sheik Zayed City, Giza, Egypt</p>
                         </div>
                     </div>
                 </div>
