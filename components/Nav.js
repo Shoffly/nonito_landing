@@ -22,8 +22,8 @@ export default function Nav() {
         </div>
       </Link>
       <div className={styles.mobileActions}>
-        <Link href="htt" className={styles.mobileSignUp}>
-          <div className={styles.navcall}>Sign up</div>
+        <Link href="/form" className={styles.mobileSignUp}>
+          <div className={styles.navcall}>Get Demo</div>
         </Link>
         <div className={styles.hamburger} onClick={toggleMenu}>
           <div></div>
@@ -32,22 +32,12 @@ export default function Nav() {
         </div>
       </div>
       <div className={`${styles.navLinks} ${isMenuOpen ? styles.open : ''}`}>
-        <div className={styles.toolsDropdown}>
-          <button className={styles.toolsButton} onClick={toggleTools}>
-            Tools
-            <span className={`${styles.arrow} ${isToolsOpen ? styles.up : ''}`}>▼</span>
-          </button>
-          <div className={`${styles.dropdownContent} ${isToolsOpen ? styles.show : ''}`}>
-            <Link href="/tools/zyda-analysis">
-              <div className={styles.dropdownItem}>Zyda Analysis</div>
-            </Link>
-          </div>
-        </div>
+       
         <Link href="/pricing">
           <div className={styles.navButton}>Pricing</div>
         </Link>
-        <Link href="https://app.nonito.io/signup" className={styles.desktopSignUp}>
-          <div className={styles.navcall}>Sign up</div>
+        <Link href="/form" className={styles.desktopSignUp}>
+          <div className={styles.navcall}>Get Demo</div>
         </Link>
       </div>
     </nav>
