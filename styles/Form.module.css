@@ -55,7 +55,7 @@
 .checkboxOption {
   display: flex;
   align-items: center;
-  background-color: #272A33;
+  background-color: #F7F2EB;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -215,7 +215,7 @@
 .radioOption {
   display: flex;
   align-items: center;
-  background-color: #272A33;
+  background-color: #F7F2EB;
   padding: 15px;
   border-radius: 5px;
   cursor: pointer;
