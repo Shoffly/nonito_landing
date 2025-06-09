@@ -263,7 +263,7 @@ export default function Form() {
             <>
               <h2 className={styles.question}>What do you use for SMS campaigns?</h2>
               <div className={styles.checkboxContainer}>
-                {['Victory Link', 'SMS Misr', 'I dont send SMS campaigns', 'Other'].map((campaign) => (
+                {['Victory Link', 'SMS Misr', 'I don&#x2019;t send SMS campaigns', 'Other'].map((campaign) => (
                   <label key={campaign} className={styles.checkboxOption}>
                     <input
                       type="checkbox"
@@ -309,7 +309,7 @@ export default function Form() {
           return (
             <div className={styles.successMessage}>
               <h2>Thank you {formData.name}!</h2>
-              <p>We're excited to help your business grow with Nonito!</p>
+              <p>We&#x2019;re excited to help your business grow with Nonito!</p>
               <p>Ready to get started with your Nonito Package?</p>
             </div>
           );
@@ -375,13 +375,13 @@ export default function Form() {
               <p>Thank you for choosing Nonito Package, {formData.name}!</p>
               <div className={styles.contactInfo}>
                 <p><strong>What happens next?</strong></p>
-                <p>✅ We'll contact you within 24 hours</p>
+                <p>✅ We&#x2019;ll contact you within 24 hours</p>
                 <p>✅ Our team will discuss your specific needs</p>
-                <p>✅ We'll set up your Nonito Package</p>
-                <p>✅ You'll receive onboarding support</p>
+                <p>✅ We&#x2019;ll set up your Nonito Package</p>
+                <p>✅ You&#x2019;ll receive onboarding support</p>
               </div>
               <p className={styles.contactNote}>
-                <strong>Questions?</strong> We'll be in touch soon to finalize everything!
+                <strong>Questions?</strong> We&#x2019;ll be in touch soon to finalize everything!
               </p>
             </div>
           );
