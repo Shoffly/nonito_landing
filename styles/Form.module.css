@@ -59,6 +59,7 @@
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  color: #030F2D;
 }
 
 .checkboxOption input[type="checkbox"] {
@@ -249,7 +250,7 @@
 }
 
 .radioOption {
-  color: #F7F2EB;
+  color: #030F2D;
 }
 
 /* Final Success Message */

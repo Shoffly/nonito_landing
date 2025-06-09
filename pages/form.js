@@ -263,7 +263,7 @@ export default function Form() {
             <>
               <h2 className={styles.question}>What do you use for SMS campaigns?</h2>
               <div className={styles.checkboxContainer}>
-                {['Victory Link', 'SMS Misr', 'I don&#x2019;t send SMS campaigns', 'Other'].map((campaign) => (
+                {['Victory Link', 'SMS Misr', 'I do not send SMS campaigns', 'Other'].map((campaign) => (
                   <label key={campaign} className={styles.checkboxOption}>
                     <input
                       type="checkbox"
