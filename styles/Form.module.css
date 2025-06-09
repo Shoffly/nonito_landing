@@ -150,6 +150,144 @@
   100% { transform: rotate(360deg); }
 }
 
+/* Checkout Styles */
+.checkoutSection {
+  text-align: center;
+}
+
+.packageCard {
+  background-color: #272A33;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  border: 2px solid #0147EB;
+}
+
+.packageCard h3 {
+  color: #F7F2EB;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.packageCard p {
+  color: #F7F2EB;
+  margin-bottom: 15px;
+}
+
+.packageFeatures {
+  text-align: left;
+  margin: 15px 0;
+}
+
+.packageFeatures div {
+  color: #F7F2EB;
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.packagePrice {
+  color: #0147EB;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 15px;
+}
+
+/* Address and Payment Styles */
+.addressSection, .paymentSection {
+  margin: 20px 0;
+}
+
+.addressSection h3, .paymentSection h3 {
+  color: #030F2D;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.addressRow {
+  display: flex;
+  gap: 10px;
+}
+
+.addressRow input {
+  flex: 1;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  background-color: #272A33;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.radioOption input[type="radio"] {
+  display: none;
+}
+
+.radioOption span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0147EB;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+}
+
+.radioOption input[type="radio"]:checked + span::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #0147EB;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radioOption {
+  color: #F7F2EB;
+}
+
+/* Final Success Message */
+.finalSuccessMessage {
+  text-align: center;
+  padding: 20px;
+}
+
+.successIcon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.finalSuccessMessage h2 {
+  color: #030F2D;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.contactInfo {
+  background-color: #F7F2EB;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 4px solid #0147EB;
+}
+
+.contactInfo p {
+  margin: 10px 0;
+  color: #030F2D;
+}
+
+.contactNote {
+  font-style: italic;
+  color: #030F2D;
+  margin-top: 20px;
+}
+
 @media (min-width: 768px) {
   .formContainer {
     max-width: 800px;
@@ -180,5 +318,30 @@
   .countrySelector select {
     padding: 10px;
     font-size: 1.1rem;
+  }
+
+  .packageCard {
+    padding: 30px;
+  }
+
+  .packageCard h3 {
+    font-size: 2rem;
+  }
+
+  .addressRow {
+    gap: 15px;
+  }
+
+  .radioOption {
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+
+  .finalSuccessMessage h2 {
+    font-size: 2.5rem;
+  }
+
+  .contactInfo {
+    padding: 30px;
   }
 }

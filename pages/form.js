@@ -16,6 +16,9 @@ export default function Form() {
     sellingMethods: [],
     smsCampaigns: [],
     phoneNumber: '',
+    address: '',
+    city: '',
+    paymentMethod: '',
   });
   const [otherSellingMethod, setOtherSellingMethod] = useState('');
   const [otherSmsCampaign, setOtherSmsCampaign] = useState('');
@@ -42,7 +45,10 @@ export default function Form() {
     3: "Selling Methods",
     4: "SMS Provider",
     5: "Phone Number",
-    6: "Thank You"
+    6: "Thank You",
+    7: "Checkout",
+    8: "Address & Payment",
+    9: "Success"
   };
 
   useEffect(() => {
@@ -73,6 +79,19 @@ export default function Form() {
         break;
       case 5:
         setIsStepValid(formData.phoneNumber.trim() !== '');
+        break;
+      case 6:
+        setIsStepValid(true); // Thank you page - always valid
+        break;
+      case 7:
+        setIsStepValid(true); // Checkout page - always valid
+        break;
+      case 8:
+        setIsStepValid(
+          formData.address.trim() !== '' && 
+          formData.city.trim() !== '' && 
+          formData.paymentMethod !== ''
+        );
         break;
       default:
         setIsStepValid(true);
@@ -111,6 +130,16 @@ export default function Form() {
         return { sms_campaigns: formData.smsCampaigns };
       case 5:
         return { phone_number: formData.phoneNumber };
+      case 6:
+        return { step: 'thank_you' };
+      case 7:
+        return { step: 'checkout' };
+      case 8:
+        return { 
+          address: formData.address,
+          city: formData.city,
+          payment_method: formData.paymentMethod
+        };
       default:
         return {};
     }
@@ -280,7 +309,80 @@ export default function Form() {
           return (
             <div className={styles.successMessage}>
               <h2>Thank you {formData.name}!</h2>
-              <p>Expect a call soon!</p>
+              <p>We're excited to help your business grow with Nonito!</p>
+              <p>Ready to get started with your Nonito Package?</p>
+            </div>
+          );
+        case 7:
+          return (
+            <div className={styles.checkoutSection}>
+              <h2 className={styles.question}>Checkout</h2>
+              <div className={styles.packageCard}>
+                <h3>📦 Nonito Package</h3>
+                <p>Complete SMS marketing solution for your business</p>
+                <div className={styles.packageFeatures}>
+                  <div>✅ Advanced SMS campaigns</div>
+                  <div>✅ Customer segmentation</div>
+                  <div>✅ Analytics & reporting</div>
+                  <div>✅ 24/7 support</div>
+                </div>
+                <div className={styles.packagePrice}>Custom pricing based on your needs</div>
+              </div>
+            </div>
+          );
+        case 8:
+          return (
+            <>
+              <h2 className={styles.question}>Shipping & Payment Details</h2>
+              <div className={styles.addressSection}>
+                <h3>Shipping Address</h3>
+                <input
+                  type="text"
+                  value={formData.address}
+                  onChange={(e) => updateFormData('address', e.target.value)}
+                  placeholder="Street address"
+                />
+                <input
+                  type="text"
+                  value={formData.city}
+                  onChange={(e) => updateFormData('city', e.target.value)}
+                  placeholder="City"
+                />
+              </div>
+              <div className={styles.paymentSection}>
+                <h3>Payment Method</h3>
+                <div className={styles.checkboxContainer}>
+                  <label className={styles.radioOption}>
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="Cash on Delivery"
+                      checked={formData.paymentMethod === "Cash on Delivery"}
+                      onChange={(e) => updateFormData('paymentMethod', e.target.value)}
+                    />
+                    <span></span>
+                    Cash on Delivery
+                  </label>
+                </div>
+              </div>
+            </>
+          );
+        case 9:
+          return (
+            <div className={styles.finalSuccessMessage}>
+              <div className={styles.successIcon}>🎉</div>
+              <h2>Order Confirmed!</h2>
+              <p>Thank you for choosing Nonito Package, {formData.name}!</p>
+              <div className={styles.contactInfo}>
+                <p><strong>What happens next?</strong></p>
+                <p>✅ We'll contact you within 24 hours</p>
+                <p>✅ Our team will discuss your specific needs</p>
+                <p>✅ We'll set up your Nonito Package</p>
+                <p>✅ You'll receive onboarding support</p>
+              </div>
+              <p className={styles.contactNote}>
+                <strong>Questions?</strong> We'll be in touch soon to finalize everything!
+              </p>
             </div>
           );
         default:
@@ -300,17 +402,22 @@ export default function Form() {
       <Nav />
       <div className={styles.formContainer}>
         <div className={styles.progressBar}>
-          <div className={styles.progress} style={{ width: `${(Math.min(step, 5) / 5) * 100}%` }}></div>
+          <div className={styles.progress} style={{ width: `${(Math.min(step, 8) / 8) * 100}%` }}></div>
         </div>
         <form onSubmit={(e) => {
           e.preventDefault();
-          if (step < 5) nextStep();
-          else if (step === 5) handleSubmit();
+          if (step < 8) nextStep();
+          else if (step === 8) handleSubmit();
         }}>
           {renderStep()}
-          {step < 6 && (
+          {step < 9 && (
             <button type="submit" disabled={!isStepValid || isSubmitting}>
-              {isSubmitting ? <div className={styles.spinner}></div> : (step < 5 ? 'OK' : 'Submit')}
+              {isSubmitting ? <div className={styles.spinner}></div> : 
+                step < 5 ? 'OK' : 
+                step === 5 ? 'Continue' :
+                step === 6 ? 'Proceed to Checkout' :
+                step === 7 ? 'Continue' :
+                'Complete Order'}
             </button>
           )}
         </form>
